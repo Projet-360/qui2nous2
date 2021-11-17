@@ -3,6 +3,10 @@ body {
     padding: 0 !important;
 }
 
+.active{
+    display: flex !important;
+}
+
 .include_players {
     display: flex;
     flex-direction: column;
@@ -14,6 +18,8 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgb(21, 21, 119);
+
+    display: none;
 
     input,button {
         margin: 10px 0px;
@@ -48,6 +54,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgb(21, 21, 119);
+    display: none;
 }
 
 #decomtpe {
@@ -57,4 +64,18 @@ body {
     &.active {
         display: flex !important;
     }
+}
+
+#whowin {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(21, 21, 119);
+    display: none;
 }

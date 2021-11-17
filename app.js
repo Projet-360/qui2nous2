@@ -10,13 +10,20 @@ var questions = [
 var containerIncludePlayers = document.querySelector(".include_players");
 var add = document.querySelector("#include_players");
 
+var selectedPlayer
+
 var next = document.querySelector("#next");
 var question = document.querySelector("#question");
 
 var printPlayers = document.querySelector("#array_players");
 var printPlayer = document.querySelector("#selectedplayer");
-var selecteduestion = document.querySelector("#selectedquestion");
+var selectedquestion = document.querySelector("#selectedquestion");
 var decompte = document.getElementById("decomtpe")
+var containerQuestion = document.getElementById("container-selectedplayer")
+
+var whoWin = document.getElementById("whowin")
+var iwin = document.getElementById("iwin")
+var nothing = document.getElementById("nothing")
 
 
 function includePlayers(){
@@ -25,8 +32,10 @@ function includePlayers(){
    }
    else{
       var include_players = add.value;
-      players.push(include_players);
+      players.push([include_players, 0]);
       add.value = "";
+
+      console.log(players)
 
       var node = document.createElement("li");                 // Create a <li> node
       var textnode = document.createTextNode(include_players);         // Create a text node
@@ -36,12 +45,15 @@ function includePlayers(){
 }
 
 
-next.onclick = function() {
-    containerIncludePlayers.remove();
-    let selectedPlayer = players[(Math.random() * players.length) | 0]
+next.onclick = function selectPlayer() {
+    containerIncludePlayers.classList.remove("active");
+    containerQuestion.classList.add("active");
+
+    window.selectedPlayer = players[(Math.random() * players.length) | 0]
+    
 
     var node = document.createElement("h1");                 // Create a <li> node
-    var textnode = document.createTextNode(selectedPlayer + ' piochez une carte et choisissez deux joueurs de votre choix');         // Create a text node
+    var textnode = document.createTextNode(selectedPlayer[0] + ' piochez une carte et choisissez deux joueurs de votre choix');         // Create a text node
     node.appendChild(textnode);                              // Append the text to <li>
     printPlayer.appendChild(node); 
 
@@ -59,6 +71,7 @@ next.onclick = function() {
 
 
 
+
 // initialise le temps
 var cpt = 3;
 
@@ -69,7 +82,9 @@ startdecompte.onclick = function(){
       return new Promise((resolve,reject)=>{
           //here our function should be implemented 
           setTimeout(()=>{
-            alert("c'est fini !")
+            containerQuestion.classList.remove("active");
+            whoWin.classList.add("active");
+            
               resolve();
           ;} , 3000
           );
@@ -93,4 +108,11 @@ startdecompte.onclick = function(){
   }
   
   callerFun();
+};
+
+
+
+iwin.onclick = function() {
+   selectedPlayer[1] = +1
+   console.log(selectedPlayer)
 };
