@@ -35,12 +35,13 @@ function includePlayers(){
       players.push([include_players, 0]);
       add.value = "";
 
-      console.log(players)
+      players.map(function(num) {
+         var node = document.createElement("li");                 // Create a <li> node
+         var textnode = document.createTextNode(num[0] + ' - point:' + num[1]);         // Create a text node
+         node.appendChild(textnode);                              // Append the text to <li>
+         printPlayers.appendChild(node); 
+       });
 
-      var node = document.createElement("li");                 // Create a <li> node
-      var textnode = document.createTextNode(include_players);         // Create a text node
-      node.appendChild(textnode);                              // Append the text to <li>
-      printPlayers.appendChild(node); 
    }
 }
 
@@ -114,5 +115,12 @@ startdecompte.onclick = function(){
 
 iwin.onclick = function() {
    selectedPlayer[1] = +1
-   console.log(selectedPlayer)
+   
+   iwin.classList.remove("active");
+   containerIncludePlayers.classList.add("active");
+};
+
+nothing.onclick = function() { 
+   iwin.classList.remove("active");
+   containerIncludePlayers.classList.add("active");
 };
