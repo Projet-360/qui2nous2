@@ -1,5 +1,6 @@
-var players = [];
-var questions = [
+let players = []
+
+let questions = [
    "qui de vous 2 dd",
    "qui de vous 2 ee",
    "qui de vous 2 zz",
@@ -7,40 +8,41 @@ var questions = [
    "qui de vous 2 mm",
 ];
 
-var containerIncludePlayers = document.querySelector(".include_players");
-var add = document.querySelector("#include_players");
+const containerIncludePlayers = document.querySelector(".include_players");
+const add = document.querySelector("#include_players");
 
-var selectedPlayer
+let selectedPlayer
 
-var next = document.querySelector("#next");
-var question = document.querySelector("#question");
+const save = document.querySelector("#save");
+const next = document.querySelector("#next");
+const question = document.querySelector("#question");
 
-var printPlayers = document.querySelector("#array_players");
-var printPlayer = document.querySelector("#selectedplayer");
-var selectedquestion = document.querySelector("#selectedquestion");
-var decompte = document.getElementById("decomtpe")
-var containerQuestion = document.getElementById("container-selectedplayer")
+const printPlayers = document.querySelector("#array_players");
+const printPlayer = document.querySelector("#selectedplayer");
+const selectedquestion = document.querySelector("#selectedquestion");
+const decompte = document.getElementById("decomtpe")
+const containerQuestion = document.getElementById("container-selectedplayer")
 
-var whoWin = document.getElementById("whowin")
-var iwin = document.getElementById("iwin")
-var nothing = document.getElementById("nothing")
+const whoWin = document.getElementById("whowin")
+const iwin = document.getElementById("iwin")
+const nothing = document.getElementById("nothing")
 
 
-function includePlayers(){
+save.onclick = function includePlayers() {
   if(add.value == ""){
       alert("Il faut rentrer le prénom d'un joueur");
    }
    else{
       var include_players = add.value;
-      players.push([include_players, 0]);
+      let point = 0
+      players.push([include_players, point]);
       add.value = "";
 
-      players.map(function(num) {
-         var node = document.createElement("li");                 // Create a <li> node
-         var textnode = document.createTextNode(num[0] + ' - point:' + num[1]);         // Create a text node
-         node.appendChild(textnode);                              // Append the text to <li>
-         printPlayers.appendChild(node); 
-       });
+     // printPlayers.write(players);
+      var node = document.createElement("li");                 // Create a <li> node
+      var textnode = document.createTextNode(include_players + ' - point:' + point);         // Create a text node
+      node.appendChild(textnode);                              // Append the text to <li>
+      printPlayers.appendChild(node); 
 
    }
 }
@@ -115,7 +117,7 @@ startdecompte.onclick = function(){
 
 iwin.onclick = function() {
    selectedPlayer[1] = +1
-   
+   printPlayers.write(a);
    iwin.classList.remove("active");
    containerIncludePlayers.classList.add("active");
 };
