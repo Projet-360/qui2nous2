@@ -15,7 +15,7 @@
             <input id="include_players" type="text">
             <!-- Boton que agrega, en el onClick se pone el nombre de la funcion -->
             <button id="save">Ajouter un joueur</button>
-            <button id="next">C'est bon !</button>
+            <button id="next">Lancer une partie</button>
         </div>
 
         <div id="container-selectedplayer">
@@ -38,5 +38,16 @@
         </div>
 
         <script src="app.js"></script>
+        <script>
+function passFromValue(){
+    var x = 15;
+    return x;  
+}
+function passToValue() {
+    var y = passFromValue();
+    console.log(y);//15
+}
+passToValue(); 
+          </script>
     </body>
 </html>

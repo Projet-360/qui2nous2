@@ -28,7 +28,9 @@ const iwin = document.getElementById("iwin")
 const nothing = document.getElementById("nothing")
 
 
-save.onclick = function includePlayers() {
+
+save.addEventListener('click', includePlayers);
+function includePlayers() {
   if(add.value == ""){
       alert("Il faut rentrer le prénom d'un joueur");
    }
@@ -47,18 +49,20 @@ save.onclick = function includePlayers() {
    }
 }
 
-
-next.onclick = function selectPlayer() {
+next.addEventListener('click', selectPlayer);
+function selectPlayer() {
     containerIncludePlayers.classList.remove("active");
     containerQuestion.classList.add("active");
 
-    window.selectedPlayer = players[(Math.random() * players.length) | 0]
+    let selectedPlayer = players[(Math.random() * players.length) | 0]
+ 
     
-
+   console.log(selectedPlayer)
     var node = document.createElement("h1");                 // Create a <li> node
     var textnode = document.createTextNode(selectedPlayer[0] + ' piochez une carte et choisissez deux joueurs de votre choix');         // Create a text node
     node.appendChild(textnode);                              // Append the text to <li>
     printPlayer.appendChild(node); 
+    console.log(node)
 
     question.onclick = function() {
       let selectQuestion = questions[(Math.random() * questions.length) | 0]
@@ -69,7 +73,10 @@ next.onclick = function selectPlayer() {
       selectedquestion.appendChild(node);
       
       decompte.classList.add('active');
+      return selectedquestion; 
    };
+   
+   return selectedPlayer; 
 };
 
 
@@ -80,13 +87,18 @@ var cpt = 3;
 
 const startdecompte = document.querySelector('.startdecompte')
 
-startdecompte.onclick = function(){
+startdecompte.addEventListener('click', finish);
+function finish(){
    function testAsync(){
       return new Promise((resolve,reject)=>{
           //here our function should be implemented 
           setTimeout(()=>{
             containerQuestion.classList.remove("active");
             whoWin.classList.add("active");
+
+            selectedquestion.innerHTML = " "; 
+            printPlayers.innerHTML = " ";   
+            document.querySelector("#selectedplayer").innerHTML = " "; 
             
               resolve();
           ;} , 3000
@@ -114,10 +126,22 @@ startdecompte.onclick = function(){
 };
 
 
+iwin.addEventListener('click', fin);
+function fin() {
+   var y = selectPlayer();
+   y[1] += 1
 
-iwin.onclick = function() {
-   selectedPlayer[1] = +1
-   printPlayers.write(a);
+
+   printPlayers.innerHTML = " ";   
+   var cpt = 3;
+
+   players.forEach(function(item){
+      var node = document.createElement("li");                 // Create a <li> node
+      var textnode = document.createTextNode(item[0] + ' - point:' + item[1]);         // Create a text node
+      node.appendChild(textnode);                              // Append the text to <li>
+      printPlayers.appendChild(node); 
+   });
+
    iwin.classList.remove("active");
    containerIncludePlayers.classList.add("active");
 };
