@@ -29,12 +29,19 @@ const whoWin = document.getElementById("whowin")
 const iwin = document.getElementById("iwin")
 const nothing = document.getElementById("nothing")
 const startdecompte = document.querySelector('.startdecompte')
+const currentplayercontainer = document.querySelector('#currentplayer')
+
+
+
 
 save.addEventListener('click', includePlayers);
 next.addEventListener('click', selectPlayer);
 next.addEventListener('click',  selectQuestion);
 startdecompte.addEventListener('click', Chrono);
+
 iwin.addEventListener('click', iwinfunc);
+
+
 nothing.addEventListener('click', nothingfunc);
 
 function includePlayers() {
@@ -44,7 +51,7 @@ function includePlayers() {
    else{
       var include_players = add.value;
       let point = 0
-      players.push([include_players, point]);
+      players.push({"name": include_players, "point": point});
       add.value = "";
 
      // printPlayers.write(players);
@@ -58,17 +65,18 @@ function includePlayers() {
 
 function selectPlayer() {
    let selectedPlayer = players[(Math.random() * players.length) | 0]
-   window.currentplayer = selectedPlayer
-
+   window.currentplayer = selectedPlayer.name
    console.log(selectedPlayer)
+
+   currentplayercontainer.append(selectedPlayer.name)
+
     var node = document.createElement("h1");                 // Create a <li> node
-    var textnode = document.createTextNode(selectedPlayer[0] + ' piochez une carte et choisissez deux joueurs de votre choix');         // Create a text node
+    var textnode = document.createTextNode(selectedPlayer.name + ' piochez une carte et choisissez deux joueurs de votre choix');         // Create a text node
     node.appendChild(textnode);                              // Append the text to <li>
     printPlayer.appendChild(node); 
 
     containerIncludePlayers.classList.remove("active");
     containerQuestion.classList.add("active");
-   return selectedPlayer; 
 };
 
 function selectQuestion() {
@@ -97,7 +105,7 @@ function Chrono(){
             document.querySelector("#selectedplayer").innerHTML = " "; 
             
               resolve();
-          ;} , 3000
+          ;} , 1
           );
       });
   }
@@ -121,12 +129,24 @@ function Chrono(){
   callerFun();
 };
 
+
 function iwinfunc() {
-   currentplayer[1] = +1;
-   printPlayers.innerHTML = " ";   
+   let MyDiv2 = currentplayercontainer.innerHTML
+   console.log('<- resultat de la variable - '+ MyDiv2 );
+
+   let found = players.find(o => o.name == MyDiv2.replace(/\s+/g, ''));   
+   console.log(found);
+
+   found.point += 1
+   
+   found = null
+   MyDiv2 = null
+   printPlayers.innerHTML = " ";  
+   currentplayercontainer.innerHTML = " "; 
+
    players.forEach(function(item){
       var node = document.createElement("li");                 // Create a <li> node
-      var textnode = document.createTextNode(item[0] + ' - point:' + item[1]);         // Create a text node
+      var textnode = document.createTextNode(item.name + ' - point:' + item.point);         // Create a text node
       node.appendChild(textnode);                              // Append the text to <li>
       printPlayers.appendChild(node); 
    });

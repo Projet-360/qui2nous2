@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <div id="currentplayer"></div>
         <div class="include_players active">
             <div class="print_joueur">
                 <ul id="array_players"></ul>
@@ -38,16 +39,24 @@
         </div>
 
         <script src="app.js"></script>
+
         <script>
-function passFromValue(){
-    var x = 15;
-    return x;  
-}
-function passToValue() {
-    var y = passFromValue();
-    console.log(y);//15
-}
-passToValue(); 
-          </script>
+            let erica = "Erica"
+            
+            let users = [
+                {
+                    name: 'George',                    
+                    age: 28
+                }, {
+                    name: 'Erica',                    
+                    age: 50
+                }, {
+                    name: 'Leo',                    
+                    age: 20
+                }
+            ];
+
+            console.log(users.find(user => user.name === erica))
+        </script>
     </body>
 </html>
