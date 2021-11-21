@@ -12,6 +12,8 @@ const containerIncludePlayers = document.querySelector(".include_players");
 const add = document.querySelector("#include_players");
 
 let selectedPlayer
+// initialise le temps
+var cpt = 3;
 
 const save = document.querySelector("#save");
 const next = document.querySelector("#next");
@@ -26,10 +28,14 @@ const containerQuestion = document.getElementById("container-selectedplayer")
 const whoWin = document.getElementById("whowin")
 const iwin = document.getElementById("iwin")
 const nothing = document.getElementById("nothing")
-
-
+const startdecompte = document.querySelector('.startdecompte')
 
 save.addEventListener('click', includePlayers);
+next.addEventListener('click', selectPlayer, selectQuestion);
+startdecompte.addEventListener('click', Chrono);
+iwin.addEventListener('click', iwin);
+nothing.addEventListener('click', nothingfunc);
+
 function includePlayers() {
   if(add.value == ""){
       alert("Il faut rentrer le prénom d'un joueur");
@@ -49,7 +55,6 @@ function includePlayers() {
    }
 }
 
-next.addEventListener('click', selectPlayer);
 function selectPlayer() {
     containerIncludePlayers.classList.remove("active");
     containerQuestion.classList.add("active");
@@ -62,9 +67,11 @@ function selectPlayer() {
     var textnode = document.createTextNode(selectedPlayer[0] + ' piochez une carte et choisissez deux joueurs de votre choix');         // Create a text node
     node.appendChild(textnode);                              // Append the text to <li>
     printPlayer.appendChild(node); 
-    console.log(node)
+   return selectedPlayer; 
+};
 
-    question.onclick = function() {
+function selectQuestion() {
+   question.onclick = function() {
       let selectQuestion = questions[(Math.random() * questions.length) | 0]
 
       var node = document.createElement("h1");                 // Create a <li> node
@@ -73,22 +80,10 @@ function selectPlayer() {
       selectedquestion.appendChild(node);
       
       decompte.classList.add('active');
-      return selectedquestion; 
    };
-   
-   return selectedPlayer; 
 };
 
-
-
-
-// initialise le temps
-var cpt = 3;
-
-const startdecompte = document.querySelector('.startdecompte')
-
-startdecompte.addEventListener('click', finish);
-function finish(){
+function Chrono(){
    function testAsync(){
       return new Promise((resolve,reject)=>{
           //here our function should be implemented 
@@ -125,16 +120,8 @@ function finish(){
   callerFun();
 };
 
-
-iwin.addEventListener('click', fin);
-function fin() {
-   var y = selectPlayer();
-   y[1] += 1
-
-
+function iwin() {
    printPlayers.innerHTML = " ";   
-   var cpt = 3;
-
    players.forEach(function(item){
       var node = document.createElement("li");                 // Create a <li> node
       var textnode = document.createTextNode(item[0] + ' - point:' + item[1]);         // Create a text node
@@ -146,7 +133,7 @@ function fin() {
    containerIncludePlayers.classList.add("active");
 };
 
-nothing.onclick = function() { 
+function nothingfunc() { 
    iwin.classList.remove("active");
    containerIncludePlayers.classList.add("active");
 };
