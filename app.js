@@ -31,9 +31,10 @@ const nothing = document.getElementById("nothing")
 const startdecompte = document.querySelector('.startdecompte')
 
 save.addEventListener('click', includePlayers);
-next.addEventListener('click', selectPlayer, selectQuestion);
+next.addEventListener('click', selectPlayer);
+next.addEventListener('click',  selectQuestion);
 startdecompte.addEventListener('click', Chrono);
-iwin.addEventListener('click', iwin);
+iwin.addEventListener('click', iwinfunc);
 nothing.addEventListener('click', nothingfunc);
 
 function includePlayers() {
@@ -56,17 +57,17 @@ function includePlayers() {
 }
 
 function selectPlayer() {
-    containerIncludePlayers.classList.remove("active");
-    containerQuestion.classList.add("active");
+   let selectedPlayer = players[(Math.random() * players.length) | 0]
+   window.currentplayer = selectedPlayer
 
-    let selectedPlayer = players[(Math.random() * players.length) | 0]
- 
-    
    console.log(selectedPlayer)
     var node = document.createElement("h1");                 // Create a <li> node
     var textnode = document.createTextNode(selectedPlayer[0] + ' piochez une carte et choisissez deux joueurs de votre choix');         // Create a text node
     node.appendChild(textnode);                              // Append the text to <li>
     printPlayer.appendChild(node); 
+
+    containerIncludePlayers.classList.remove("active");
+    containerQuestion.classList.add("active");
    return selectedPlayer; 
 };
 
@@ -120,7 +121,8 @@ function Chrono(){
   callerFun();
 };
 
-function iwin() {
+function iwinfunc() {
+   currentplayer[1] = +1;
    printPlayers.innerHTML = " ";   
    players.forEach(function(item){
       var node = document.createElement("li");                 // Create a <li> node
