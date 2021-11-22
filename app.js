@@ -62,7 +62,11 @@ nothing.addEventListener('click', nothingfunc);
 function ajouteJoueur() {
    if (add.value == "") {
       alert("Il faut rentrer le prénom d'un joueur");
-   } else {
+   }
+   if (add.value == "") {
+      alert("Il faut rentrer le prénom d'un joueur");
+   }
+    else {
       var include_players = add.value;
       let point = 0
       players.push({
@@ -110,6 +114,7 @@ function selectJoueur() {
 function selectQuestion() {
    pioche.style.display = "flex";
    questioncontainer.style.display = "none";
+
    question.onclick = function () {
       let selectQuestion = questions[(Math.random() * questions.length) | 0]
 
@@ -129,9 +134,44 @@ function selectQuestion() {
 
 function Chrono() {
    startdeAnim.classList.add("active");
+
    function testAsync() {
       return new Promise((resolve, reject) => {
          //here our function should be implemented 
+         const nums = document.querySelectorAll('.nums span');
+         const counter = document.querySelector('.counter');
+         const repl = document.getElementById('replay');
+         
+         runAnimation();
+         
+         function resetDOM() {
+            counter.classList.remove('hide');
+             
+            nums.forEach(num => {
+               num.classList.value = '';
+            });
+         
+             nums[0].classList.add('in');
+         }
+         
+         function runAnimation() {
+            nums.forEach((num, idx) => {
+               const penultimate = nums.length - 1;
+               num.addEventListener('animationend', (e) => {
+                  if(e.animationName === 'goIn' && idx !== penultimate){
+                     num.classList.remove('in');
+                     num.classList.add('out');
+                  } else if (e.animationName === 'goOut' && num.nextElementSibling){
+                     num.nextElementSibling.classList.add('in');
+                  } else {
+                     counter.classList.add('hide');
+                  }
+               });
+            });
+         }
+         resetDOM();
+         runAnimation();
+         
          setTimeout(() => {
             containerQuestion.classList.remove("active");
             whoWin.classList.add("active");
@@ -143,13 +183,13 @@ function Chrono() {
 
             resolve();;
          }, 3000);
+         
       });
    }
 
 
 
-   async function callerFun() {     
-      
+   async function callerFun() {  
       await testAsync();
    }
 
@@ -222,5 +262,4 @@ function nothingfunc() {
 function hidePioche() {
    pioche.style.display = "none";
    questioncontainer.style.display = "flex";
-
 }
