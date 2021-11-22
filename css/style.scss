@@ -67,14 +67,27 @@ body {
         margin: 5px;
         text-align: left;
         min-width: 25%;
+        position: relative;
+        color: black;
+        background: white;
 
         span {
             font-size: 8px;
         }
 
-        .top {}
+        .top {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 22px;
+        }
 
-        .bottom {}
+        .bottom {
+            font-size: 30px;
+            position: absolute;
+            bottom: 5px;
+            right: 15px;
+        }
     }
 }
 
@@ -294,7 +307,7 @@ body {
 }
 
 #next {
-    background-color: #2db143;
+    background-color: #67ec3b;
     height: 130px;
     width: 130px;
     border-radius: 50%;
@@ -308,6 +321,7 @@ body {
     height: 100px;
     width: 80vw;
     text-transform: uppercase;
+    background-color: #67ec3b;
 }
 
 .print_joueur {

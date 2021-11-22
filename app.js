@@ -49,6 +49,14 @@ startdecompte.addEventListener('click', Chrono);
 iwin.addEventListener('click', iwinfunc);
 
 
+
+add.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        ajouteJoueur();
+    }
+});
+
 nothing.addEventListener('click', nothingfunc);
 
 function ajouteJoueur() {
@@ -62,15 +70,9 @@ function ajouteJoueur() {
          "point": point
       });
       add.value = "";
-
-      function RandomColor() {
-         var hex = (Math.round(Math.random() * 0xffffff)).toString(16);
-         while (hex.length < 6) hex = "0" + hex;
-         return hex;
-      }
-      // printPlayers.write(players);
+      
       textnode = `
-         <li class="array_players-item" style="background-color: #${RandomColor()}">
+         <li class="array_players-item">
             <div class="top">
             <span>Joueur:</span><br>
             ${include_players}
@@ -89,7 +91,6 @@ function ajouteJoueur() {
 function selectJoueur() {
    let selectedPlayer = players[(Math.random() * players.length) | 0]
    window.currentplayer = selectedPlayer
-   console.log(selectedPlayer)
 
    currentplayercontainer.append(selectedPlayer.name)
 
@@ -158,10 +159,8 @@ function Chrono() {
 
 function iwinfunc() {
    let MyDiv2 = currentplayercontainer.innerHTML
-   console.log('<- resultat de la variable - ' + MyDiv2);
 
    let found = players.find(o => o.name == MyDiv2.replace(/\s+/g, ''));
-   console.log(found);
 
    found.point += 1
 
@@ -172,14 +171,8 @@ function iwinfunc() {
    decompte.classList.remove("active");
 
    players.forEach(function (item) {
-      function RandomColor() {
-         var hex = (Math.round(Math.random() * 0xffffff)).toString(16);
-         while (hex.length < 6) hex = "0" + hex;
-         return hex;
-      }
-      // printPlayers.write(players);
       textnode = `
-            <li class="array_players-item" style="background-color: #${RandomColor()}">
+            <li class="array_players-item">
                <div class="top">
                <span>Joueur:</span><br>
                ${item.name}
@@ -210,14 +203,8 @@ function nothingfunc() {
    decompte.classList.remove("active");
 
    players.forEach(function (item) {
-      function RandomColor() {
-         var hex = (Math.round(Math.random() * 0xffffff)).toString(16);
-         while (hex.length < 6) hex = "0" + hex;
-         return hex;
-      }
-      // printPlayers.write(players);
       textnode = `
-            <li class="array_players-item" style="background-color: #${RandomColor()}">
+            <li class="array_players-item">
                <div class="top">
                <span>Joueur:</span><br>
                ${item.name}
