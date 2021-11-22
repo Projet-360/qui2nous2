@@ -57,11 +57,25 @@ function ajouteJoueur() {
       players.push({"name": include_players, "point": point});
       add.value = "";
 
+      function RandomColor() {
+      var hex = (Math.round(Math.random()*0xffffff)).toString(16);
+      while (hex.length < 6) hex = "0" + hex;
+      return hex;
+      }
      // printPlayers.write(players);
-      var node = document.createElement("li");                 // Create a <li> node
-      var textnode = document.createTextNode(include_players + ' - point:' + point);         // Create a text node
-      node.appendChild(textnode);                              // Append the text to <li>
-      printPlayers.appendChild(node); 
+      textnode = `
+         <li class="array_players-item" style="background-color: #${RandomColor()}">
+            <div class="top">
+            <span>Joueur:</span><br>
+            ${include_players}
+            </div>
+            <div class="bottom">
+            <span>Nombre de point:</span><br>
+            ${point} 
+            </div> 
+         </li>
+         `;              
+      printPlayers.insertAdjacentHTML('afterbegin',textnode); 
 
    }
 }
@@ -73,10 +87,14 @@ function selectJoueur() {
 
    currentplayercontainer.append(selectedPlayer.name)
 
-    var node = document.createElement("h1");                 // Create a <li> node
-    var textnode = document.createTextNode(selectedPlayer.name + ' piochez une carte et choisissez deux joueurs de votre choix');         // Create a text node
-    node.appendChild(textnode);                              // Append the text to <li>
-    printPlayer.appendChild(node); 
+      // Create a text node
+    textnode = `
+    <h1>
+    ${selectedPlayer.name}, piochez une question
+    </h1>
+    `;              
+    printPlayer.insertAdjacentHTML('afterbegin',textnode); 
+
 
     containerajouteJoueur.classList.remove("active");
     containerQuestion.classList.add("active");
@@ -88,10 +106,15 @@ function selectQuestion() {
    question.onclick = function() {
       let selectQuestion = questions[(Math.random() * questions.length) | 0]
 
-      var node = document.createElement("h1");                 // Create a <li> node
-      var textnode = document.createTextNode(selectQuestion);         // Create a text node
-      node.appendChild(textnode);                              // Append the text to <li>
-      selectedquestion.appendChild(node);
+      textnode = `
+      <p>
+      choisissez deux joueurs de votre choix et posez leur cette question
+      </p>
+      <h1>
+      ${selectQuestion}
+      </h1>
+      `;              
+      selectedquestion.insertAdjacentHTML('afterbegin',textnode); 
       
       decompte.classList.add('active');
    };
@@ -139,10 +162,25 @@ function iwinfunc() {
    decompte.classList.remove("active");
 
    players.forEach(function(item){
-      var node = document.createElement("li");                 // Create a <li> node
-      var textnode = document.createTextNode(item.name + ' - point:' + item.point);         // Create a text node
-      node.appendChild(textnode);                              // Append the text to <li>
-      printPlayers.appendChild(node); 
+      function RandomColor() {
+         var hex = (Math.round(Math.random()*0xffffff)).toString(16);
+         while (hex.length < 6) hex = "0" + hex;
+         return hex;
+         }
+        // printPlayers.write(players);
+         textnode = `
+            <li class="array_players-item" style="background-color: #${RandomColor()}">
+               <div class="top">
+               <span>Joueur:</span><br>
+               ${item.name}
+               </div>
+               <div class="bottom">
+               <span>Nombre de point:</span><br>
+               ${item.point} 
+               </div> 
+            </li>
+            `;              
+         printPlayers.insertAdjacentHTML('afterbegin',textnode); 
    });
 
    whowin.classList.remove("active");
@@ -153,9 +191,39 @@ function iwinfunc() {
 function nothingfunc() { 
    iwin.classList.remove("active");
    containerajouteJoueur.classList.add("active");
+   whowin.classList.remove("active");
+   
+   found = null
+   MyDiv2 = null
+   printPlayers.innerHTML = " ";  
+   currentplayercontainer.innerHTML = " "; 
+   decompte.classList.remove("active");
+   
+   players.forEach(function(item){
+      function RandomColor() {
+         var hex = (Math.round(Math.random()*0xffffff)).toString(16);
+         while (hex.length < 6) hex = "0" + hex;
+         return hex;
+         }
+        // printPlayers.write(players);
+         textnode = `
+            <li class="array_players-item" style="background-color: #${RandomColor()}">
+               <div class="top">
+               <span>Joueur:</span><br>
+               ${item.name}
+               </div>
+               <div class="bottom">
+               <span>Nombre de point:</span><br>
+               ${item.point} 
+               </div> 
+            </li>
+            `;              
+         printPlayers.insertAdjacentHTML('afterbegin',textnode); 
+   });
 };
 
 function hidePioche() {
    pioche.style.display = "none";
    questioncontainer.style.display = "flex";
+   
 }

@@ -8,19 +8,19 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 
-#next {
-    background-color: #2db143;
-    height: 200px;
-    text-transform: uppercase;
-}
 
-#question,.startdecompte {
-    height: 200px;
-    width: 80vw;
-text-transform: uppercase;
-}
 #selectedquestion {
     width: 80vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+    h1 {
+        color: indianred;
+    }
 }
 #pioche {
     height: 80vh;
@@ -46,7 +46,38 @@ text-transform: uppercase;
 }
 
 #array_players {
-    margin-bottom: 80px !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: flex-start;
+
+    width: 80vw;
+
+    .array_players-item {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: flex-start;
+        padding: 10px;
+        margin: 5px;
+        text-align: left;
+        min-width: 25%;
+
+        span {
+            font-size: 8px;
+        }
+
+        .top {
+
+        }
+        .bottom {
+
+        }
+    }
 }
 
 .active{
@@ -65,7 +96,8 @@ text-transform: uppercase;
     width: 100vw;
     height: 100vh;
     background-color: rgb(5, 5, 26);
-    
+    display: none;
+
     .container{
         display: flex;
         flex-direction: column;
@@ -74,8 +106,14 @@ text-transform: uppercase;
         align-content: stretch;
         align-items: center;
         height: 80vh;
+
+        img {
+            width: 100px;
+            height: auto;
+            filter: invert(1);
+        }
     }
-    display: none;
+
 
     input,button {
         margin: 10px 0px;
@@ -92,8 +130,16 @@ text-transform: uppercase;
             list-style: none;
 
             li {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-content: stretch;
+                align-items: center;
+                
                 color: white;
                 text-align: left;
+                height: 100px;
             }
         }
     }
@@ -191,18 +237,48 @@ text-transform: uppercase;
             align-content: stretch;
             align-items: center;
             width: 100%;
+            height: 70vh;
 
             button {
                 width: 50%;
-                height: 200px;
+                height: 70vh;
             }
         }
     }
 }
-
+#save {
+    background-color: rgb(255, 189, 47);
+}
 #iwin {
     background-color: greenyellow;
+    height: 80vh;
 }
 #nothing {
     background-color: rgb(255, 54, 47);
+    height: 80vh;
+}
+
+#next {
+    background-color: #2db143;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    text-transform: uppercase;
+}
+
+#question,.startdecompte {
+    height: 100px;
+    width: 80vw;
+text-transform: uppercase;
+}
+
+.print_joueur {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: flex-start;
 }
