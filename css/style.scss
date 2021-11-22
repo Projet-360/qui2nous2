@@ -18,10 +18,12 @@ body {
     justify-content: center;
     align-content: center;
     align-items: flex-start;
+
     h1 {
         color: indianred;
     }
 }
+
 #pioche {
     height: 80vh;
     display: flex;
@@ -31,7 +33,6 @@ body {
     align-content: stretch;
     align-items: center;
 }
-
 
 .question {
     display: flex;
@@ -71,21 +72,20 @@ body {
             font-size: 8px;
         }
 
-        .top {
+        .top {}
 
-        }
-        .bottom {
-
-        }
+        .bottom {}
     }
 }
 
-.active{
+.active {
     display: flex !important;
 }
+
 #currentplayer {
     display: none;
 }
+
 .include_players {
     display: flex;
     flex-direction: column;
@@ -98,7 +98,7 @@ body {
     background-color: rgb(5, 5, 26);
     display: none;
 
-    .container{
+    .container {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -115,14 +115,15 @@ body {
     }
 
 
-    input,button {
+    input,
+    button {
         margin: 10px 0px;
         width: 80vw;
         padding: 10px;
         font-family: 'Comfortaa';
         text-transform: uppercase !important;
     }
-    
+
     .print_joueur {
         ul {
             padding: 0 !important;
@@ -136,7 +137,7 @@ body {
                 justify-content: space-between;
                 align-content: stretch;
                 align-items: center;
-                
+
                 color: white;
                 text-align: left;
                 height: 100px;
@@ -152,20 +153,18 @@ body {
             justify-content: space-between;
             align-content: stretch;
             align-items: center;
-    
+
             width: 80vw;
             margin-right: auto;
             margin-left: auto;
-    
-    
+
+
             #save {
                 width: 20vw;
             }
         }
     }
 }
-
-
 
 #container-selectedplayer {
     display: flex;
@@ -180,11 +179,24 @@ body {
     background-color: rgb(5, 5, 26);
     display: none;
 
-    #selectedplayer h1 {
-        font-size: 30px;
+    #selectedplayer {
         width: 80vw;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        align-items: flex-start;
+
+        h1 {
+            font-size: 30px;
+            width: 80vw;
+        }
     }
 }
+
+
 
 #decomtpe {
     display: none;
@@ -205,7 +217,7 @@ body {
 
     width: 100vw;
     height: 100vh;
-    background-color: rgb(5, 5, 26);
+    background-color: #092f53;
     display: none;
 
     .container {
@@ -246,16 +258,39 @@ body {
         }
     }
 }
+
 #save {
     background-color: rgb(255, 189, 47);
 }
+
 #iwin {
     background-color: greenyellow;
     height: 80vh;
+
+    img {
+        height: 100px;
+        width: 100px;
+        object-fit: contain;
+    }
+
+    p {
+        text-transform: uppercase;
+    }
 }
+
 #nothing {
     background-color: rgb(255, 54, 47);
     height: 80vh;
+
+    img {
+        height: 100px;
+        width: 100px;
+        object-fit: contain;
+    }
+
+    p {
+        text-transform: uppercase;
+    }
 }
 
 #next {
@@ -268,10 +303,11 @@ body {
     text-transform: uppercase;
 }
 
-#question,.startdecompte {
+#question,
+.startdecompte {
     height: 100px;
     width: 80vw;
-text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 .print_joueur {
@@ -282,3 +318,28 @@ text-transform: uppercase;
     align-content: center;
     align-items: flex-start;
 }
+
+.chronoanim {
+    background-color: #092f53;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;   
+    transform: scale(0);
+
+    &.active {       
+    animation-duration: 3s;
+    animation-name: slidein;
+    }
+}
+
+@keyframes slidein {
+    from {
+        transform: scale(0);
+    }
+  
+    to {
+        transform: scale(1);
+    }
+  }

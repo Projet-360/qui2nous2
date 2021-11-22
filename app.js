@@ -1,11 +1,14 @@
 let players = []
 
 let questions = [
-   "qui de vous 2 a le plus de merde dan le cul",
-   "qui de vous 2 a la plus grosse bite",
-   "qui de vous 2 est un puceau",
-   "qui de vous 2 boufferai sa merde pour 1 million",
-   "qui de vous 2 gratte le plafond",
+   "qui de vous deux sent le plus du cul",
+   "qui de vous deux a la plus grosse bite",
+   "qui de vous deux s'est dépuceler le premier",
+   "qui de vous deux boufferai sa merde pour 1 million",
+   "qui de vous deux se masturbe le plus",
+   "qui de vous deux chante le mieux",
+   "qui de vous deux casse le plus les couilles",
+   "qui de vous deux aime le plus la sodomie",
 ];
 
 const containerajouteJoueur = document.querySelector(".include_players");
@@ -32,6 +35,7 @@ const whoWin = document.getElementById("whowin")
 const iwin = document.getElementById("iwin")
 const nothing = document.getElementById("nothing")
 const startdecompte = document.querySelector('.startdecompte')
+const startdeAnim = document.querySelector('.chronoanim')
 const currentplayercontainer = document.querySelector('#currentplayer')
 
 
@@ -39,8 +43,8 @@ const currentplayercontainer = document.querySelector('#currentplayer')
 
 save.addEventListener('click', ajouteJoueur);
 next.addEventListener('click', selectJoueur);
-next.addEventListener('click',  selectQuestion);
-question.addEventListener('click',  hidePioche);
+next.addEventListener('click', selectQuestion);
+question.addEventListener('click', hidePioche);
 startdecompte.addEventListener('click', Chrono);
 iwin.addEventListener('click', iwinfunc);
 
@@ -48,21 +52,23 @@ iwin.addEventListener('click', iwinfunc);
 nothing.addEventListener('click', nothingfunc);
 
 function ajouteJoueur() {
-  if(add.value == ""){
+   if (add.value == "") {
       alert("Il faut rentrer le prénom d'un joueur");
-   }
-   else{
+   } else {
       var include_players = add.value;
       let point = 0
-      players.push({"name": include_players, "point": point});
+      players.push({
+         "name": include_players,
+         "point": point
+      });
       add.value = "";
 
       function RandomColor() {
-      var hex = (Math.round(Math.random()*0xffffff)).toString(16);
-      while (hex.length < 6) hex = "0" + hex;
-      return hex;
+         var hex = (Math.round(Math.random() * 0xffffff)).toString(16);
+         while (hex.length < 6) hex = "0" + hex;
+         return hex;
       }
-     // printPlayers.write(players);
+      // printPlayers.write(players);
       textnode = `
          <li class="array_players-item" style="background-color: #${RandomColor()}">
             <div class="top">
@@ -74,8 +80,8 @@ function ajouteJoueur() {
             ${point} 
             </div> 
          </li>
-         `;              
-      printPlayers.insertAdjacentHTML('afterbegin',textnode); 
+         `;
+      printPlayers.insertAdjacentHTML('afterbegin', textnode);
 
    }
 }
@@ -87,23 +93,23 @@ function selectJoueur() {
 
    currentplayercontainer.append(selectedPlayer.name)
 
-      // Create a text node
-    textnode = `
+   // Create a text node
+   textnode = `
     <h1>
     ${selectedPlayer.name}, piochez une question
     </h1>
-    `;              
-    printPlayer.insertAdjacentHTML('afterbegin',textnode); 
+    `;
+   printPlayer.insertAdjacentHTML('afterbegin', textnode);
 
 
-    containerajouteJoueur.classList.remove("active");
-    containerQuestion.classList.add("active");
+   containerajouteJoueur.classList.remove("active");
+   containerQuestion.classList.add("active");
 };
 
 function selectQuestion() {
    pioche.style.display = "flex";
    questioncontainer.style.display = "none";
-   question.onclick = function() {
+   question.onclick = function () {
       let selectQuestion = questions[(Math.random() * questions.length) | 0]
 
       textnode = `
@@ -113,62 +119,66 @@ function selectQuestion() {
       <h1>
       ${selectQuestion}
       </h1>
-      `;              
-      selectedquestion.insertAdjacentHTML('afterbegin',textnode); 
-      
+      `;
+      selectedquestion.insertAdjacentHTML('afterbegin', textnode);
+
       decompte.classList.add('active');
    };
 };
 
-function Chrono(){   
-   function testAsync(){
-      return new Promise((resolve,reject)=>{
-          //here our function should be implemented 
-          setTimeout(()=>{             
+function Chrono() {
+   startdeAnim.classList.add("active");
+   function testAsync() {
+      return new Promise((resolve, reject) => {
+         //here our function should be implemented 
+         setTimeout(() => {
             containerQuestion.classList.remove("active");
             whoWin.classList.add("active");
 
-            selectedquestion.innerHTML = " "; 
-            printPlayers.innerHTML = " ";   
-            document.querySelector("#selectedplayer").innerHTML = " "; 
+            selectedquestion.innerHTML = " ";
+            printPlayers.innerHTML = " ";
+            document.querySelector("#selectedplayer").innerHTML = " ";
+            startdeAnim.classList.remove("active");
 
-            
-              resolve();
-          ;} , 1
-          );
+            resolve();;
+         }, 3000);
       });
-  }
-  
-  async function callerFun(){
-     await testAsync();
-  }
-  
-  callerFun();
+   }
+
+
+
+   async function callerFun() {     
+      
+      await testAsync();
+   }
+
+   callerFun();
 };
+
 
 function iwinfunc() {
    let MyDiv2 = currentplayercontainer.innerHTML
-   console.log('<- resultat de la variable - '+ MyDiv2 );
+   console.log('<- resultat de la variable - ' + MyDiv2);
 
-   let found = players.find(o => o.name == MyDiv2.replace(/\s+/g, ''));   
+   let found = players.find(o => o.name == MyDiv2.replace(/\s+/g, ''));
    console.log(found);
 
    found.point += 1
-   
+
    found = null
    MyDiv2 = null
-   printPlayers.innerHTML = " ";  
-   currentplayercontainer.innerHTML = " "; 
+   printPlayers.innerHTML = " ";
+   currentplayercontainer.innerHTML = " ";
    decompte.classList.remove("active");
 
-   players.forEach(function(item){
+   players.forEach(function (item) {
       function RandomColor() {
-         var hex = (Math.round(Math.random()*0xffffff)).toString(16);
+         var hex = (Math.round(Math.random() * 0xffffff)).toString(16);
          while (hex.length < 6) hex = "0" + hex;
          return hex;
-         }
-        // printPlayers.write(players);
-         textnode = `
+      }
+      // printPlayers.write(players);
+      textnode = `
             <li class="array_players-item" style="background-color: #${RandomColor()}">
                <div class="top">
                <span>Joueur:</span><br>
@@ -179,8 +189,8 @@ function iwinfunc() {
                ${item.point} 
                </div> 
             </li>
-            `;              
-         printPlayers.insertAdjacentHTML('afterbegin',textnode); 
+            `;
+      printPlayers.insertAdjacentHTML('afterbegin', textnode);
    });
 
    whowin.classList.remove("active");
@@ -188,25 +198,25 @@ function iwinfunc() {
    pioche.style.display = "none";
 };
 
-function nothingfunc() { 
+function nothingfunc() {
    iwin.classList.remove("active");
    containerajouteJoueur.classList.add("active");
    whowin.classList.remove("active");
-   
+
    found = null
    MyDiv2 = null
-   printPlayers.innerHTML = " ";  
-   currentplayercontainer.innerHTML = " "; 
+   printPlayers.innerHTML = " ";
+   currentplayercontainer.innerHTML = " ";
    decompte.classList.remove("active");
-   
-   players.forEach(function(item){
+
+   players.forEach(function (item) {
       function RandomColor() {
-         var hex = (Math.round(Math.random()*0xffffff)).toString(16);
+         var hex = (Math.round(Math.random() * 0xffffff)).toString(16);
          while (hex.length < 6) hex = "0" + hex;
          return hex;
-         }
-        // printPlayers.write(players);
-         textnode = `
+      }
+      // printPlayers.write(players);
+      textnode = `
             <li class="array_players-item" style="background-color: #${RandomColor()}">
                <div class="top">
                <span>Joueur:</span><br>
@@ -217,13 +227,13 @@ function nothingfunc() {
                ${item.point} 
                </div> 
             </li>
-            `;              
-         printPlayers.insertAdjacentHTML('afterbegin',textnode); 
+            `;
+      printPlayers.insertAdjacentHTML('afterbegin', textnode);
    });
 };
 
 function hidePioche() {
    pioche.style.display = "none";
    questioncontainer.style.display = "flex";
-   
+
 }
