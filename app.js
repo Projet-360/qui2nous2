@@ -1,14 +1,14 @@
 let players = []
 
 let questions = [
-   "qui de vous 2 dd",
-   "qui de vous 2 ee",
-   "qui de vous 2 zz",
-   "qui de vous 2 ss",
-   "qui de vous 2 mm",
+   "qui de vous 2 a le plus de merde dan le cul",
+   "qui de vous 2 a la plus grosse bite",
+   "qui de vous 2 est un puceau",
+   "qui de vous 2 boufferai sa merde pour 1 million",
+   "qui de vous 2 gratte le plafond",
 ];
 
-const containerIncludePlayers = document.querySelector(".include_players");
+const containerajouteJoueur = document.querySelector(".include_players");
 const add = document.querySelector("#include_players");
 
 let selectedPlayer
@@ -18,6 +18,9 @@ var cpt = 3;
 const save = document.querySelector("#save");
 const next = document.querySelector("#next");
 const question = document.querySelector("#question");
+const questioncontainer = document.querySelector(".question");
+
+const pioche = document.querySelector("#pioche");
 
 const printPlayers = document.querySelector("#array_players");
 const printPlayer = document.querySelector("#selectedplayer");
@@ -34,17 +37,17 @@ const currentplayercontainer = document.querySelector('#currentplayer')
 
 
 
-save.addEventListener('click', includePlayers);
-next.addEventListener('click', selectPlayer);
+save.addEventListener('click', ajouteJoueur);
+next.addEventListener('click', selectJoueur);
 next.addEventListener('click',  selectQuestion);
+question.addEventListener('click',  hidePioche);
 startdecompte.addEventListener('click', Chrono);
-
 iwin.addEventListener('click', iwinfunc);
 
 
 nothing.addEventListener('click', nothingfunc);
 
-function includePlayers() {
+function ajouteJoueur() {
   if(add.value == ""){
       alert("Il faut rentrer le prénom d'un joueur");
    }
@@ -63,9 +66,9 @@ function includePlayers() {
    }
 }
 
-function selectPlayer() {
+function selectJoueur() {
    let selectedPlayer = players[(Math.random() * players.length) | 0]
-   window.currentplayer = selectedPlayer.name
+   window.currentplayer = selectedPlayer
    console.log(selectedPlayer)
 
    currentplayercontainer.append(selectedPlayer.name)
@@ -75,11 +78,13 @@ function selectPlayer() {
     node.appendChild(textnode);                              // Append the text to <li>
     printPlayer.appendChild(node); 
 
-    containerIncludePlayers.classList.remove("active");
+    containerajouteJoueur.classList.remove("active");
     containerQuestion.classList.add("active");
 };
 
 function selectQuestion() {
+   pioche.style.display = "flex";
+   questioncontainer.style.display = "none";
    question.onclick = function() {
       let selectQuestion = questions[(Math.random() * questions.length) | 0]
 
@@ -92,17 +97,18 @@ function selectQuestion() {
    };
 };
 
-function Chrono(){
+function Chrono(){   
    function testAsync(){
       return new Promise((resolve,reject)=>{
           //here our function should be implemented 
-          setTimeout(()=>{
+          setTimeout(()=>{             
             containerQuestion.classList.remove("active");
             whoWin.classList.add("active");
 
             selectedquestion.innerHTML = " "; 
             printPlayers.innerHTML = " ";   
             document.querySelector("#selectedplayer").innerHTML = " "; 
+
             
               resolve();
           ;} , 1
@@ -111,24 +117,11 @@ function Chrono(){
   }
   
   async function callerFun(){
-      setInterval(function(){
-         if(cpt>0) // si on a pas encore atteint la fin
-         {
-             --cpt; // décrémente le compteur
-             var Crono = document.getElementById("Crono"); // récupère l'id
-             var old_contenu = Crono.firstChild; // stock l'ancien contenu
-             Crono.removeChild(old_contenu); // supprime le contenu
-             var texte = document.createTextNode(cpt); // crée le texte
-             Crono.appendChild(texte); // l'affiche
-             
-         }
-     }, 1000);
      await testAsync();
   }
   
   callerFun();
 };
-
 
 function iwinfunc() {
    let MyDiv2 = currentplayercontainer.innerHTML
@@ -143,6 +136,7 @@ function iwinfunc() {
    MyDiv2 = null
    printPlayers.innerHTML = " ";  
    currentplayercontainer.innerHTML = " "; 
+   decompte.classList.remove("active");
 
    players.forEach(function(item){
       var node = document.createElement("li");                 // Create a <li> node
@@ -151,11 +145,17 @@ function iwinfunc() {
       printPlayers.appendChild(node); 
    });
 
-   iwin.classList.remove("active");
-   containerIncludePlayers.classList.add("active");
+   whowin.classList.remove("active");
+   containerajouteJoueur.classList.add("active");
+   pioche.style.display = "none";
 };
 
 function nothingfunc() { 
    iwin.classList.remove("active");
-   containerIncludePlayers.classList.add("active");
+   containerajouteJoueur.classList.add("active");
 };
+
+function hidePioche() {
+   pioche.style.display = "none";
+   questioncontainer.style.display = "flex";
+}

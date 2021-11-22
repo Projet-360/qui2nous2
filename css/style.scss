@@ -1,30 +1,88 @@
 body {
     margin: 0 !important;
     padding: 0 !important;
+    font-family: 'Comfortaa';
+    text-transform: uppercase;
+    color: white;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+#next {
+    background-color: #2db143;
+    height: 200px;
+    text-transform: uppercase;
+}
+
+#question,.startdecompte {
+    height: 200px;
+    width: 80vw;
+text-transform: uppercase;
+}
+#selectedquestion {
+    width: 80vw;
+}
+#pioche {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: center;
+}
+
+
+.question {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: stretch;
+    align-items: center;
+
+    height: 80vh;
+    display: none;
+}
+
+#array_players {
+    margin-bottom: 80px !important;
 }
 
 .active{
     display: flex !important;
 }
-
+#currentplayer {
+    display: none;
+}
 .include_players {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
-    align-content: center;
+    align-content: stretch;
     align-items: center;
-
     width: 100vw;
     height: 100vh;
-    background-color: rgb(21, 21, 119);
-
+    background-color: rgb(5, 5, 26);
+    
+    .container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-content: stretch;
+        align-items: center;
+        height: 80vh;
+    }
     display: none;
 
     input,button {
         margin: 10px 0px;
         width: 80vw;
         padding: 10px;
+        font-family: 'Comfortaa';
+        text-transform: uppercase !important;
     }
     
     .print_joueur {
@@ -35,7 +93,27 @@ body {
 
             li {
                 color: white;
-                text-align: center;
+                text-align: left;
+            }
+        }
+    }
+
+    .top {
+        .addPlayer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-content: stretch;
+            align-items: center;
+    
+            width: 80vw;
+            margin-right: auto;
+            margin-left: auto;
+    
+    
+            #save {
+                width: 20vw;
             }
         }
     }
@@ -53,8 +131,13 @@ body {
 
     width: 100vw;
     height: 100vh;
-    background-color: rgb(21, 21, 119);
+    background-color: rgb(5, 5, 26);
     display: none;
+
+    #selectedplayer h1 {
+        font-size: 30px;
+        width: 80vw;
+    }
 }
 
 #decomtpe {
@@ -71,11 +154,55 @@ body {
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
-    align-content: center;
+    align-content: stretch;
     align-items: center;
 
     width: 100vw;
     height: 100vh;
-    background-color: rgb(21, 21, 119);
+    background-color: rgb(5, 5, 26);
     display: none;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-content: stretch;
+        align-items: center;
+
+        height: 80vh;
+
+        font-size: 30px;
+        width: 80vw;
+
+        h3 {
+            margin: 0;
+            text-align: left;
+            width: 100%;
+        }
+
+
+
+        .bouttons {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-content: stretch;
+            align-items: center;
+            width: 100%;
+
+            button {
+                width: 50%;
+                height: 200px;
+            }
+        }
+    }
+}
+
+#iwin {
+    background-color: greenyellow;
+}
+#nothing {
+    background-color: rgb(255, 54, 47);
 }

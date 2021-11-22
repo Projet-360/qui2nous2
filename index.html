@@ -6,57 +6,68 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="css/style.css">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+            integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"/>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"
+            integrity="sha512-cyAbuGborsD25bhT/uz++wPqrh5cqPh1ULJz4NSpN9ktWcA6Hnh9g+CWKeNx2R0fgQt+ybRXdabSBgYXkQTTmA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
     </head>
     <body>
         <div id="currentplayer"></div>
         <div class="include_players active">
-            <div class="print_joueur">
-                <ul id="array_players"></ul>
+            <div class="container">
+                <div class="top">
+                    <h2>Ajouter un joueur:</h2>
+                    <div class="addPlayer">
+                        <input id="include_players" type="text">
+                        <!-- Boton que agrega, en el onClick se pone el nombre de la funcion -->
+                        <button id="save">
+                            <i class="fas fa-plus"></i>
+                            <i class="far fa-user"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="print_joueur">
+                    <h3>Joueurs ajoutés:</h3>
+                    <ul id="array_players"></ul>
+                    <button id="next">Lancer une partie</button>
+                </div>
             </div>
-            <input id="include_players" type="text">
-            <!-- Boton que agrega, en el onClick se pone el nombre de la funcion -->
-            <button id="save">Ajouter un joueur</button>
-            <button id="next">Lancer une partie</button>
         </div>
 
         <div id="container-selectedplayer">
-            <div id="selectedplayer"></div>
-            <button id="question">piochez une question</button>
-
-            <div id="selectedquestion"></div>
-
-            <div id="decomtpe">
-                <button class="startdecompte">lancer decompte</button>
-                <span id="Crono">3</span>
-                secondes.
+            <div id="pioche">
+                <div id="selectedplayer"></div>
+                <button id="question">piochez une question</button>
             </div>
+
+            <div class="question">
+                <div id="selectedquestion"></div>
+
+                <div id="decomtpe">
+                    <button class="startdecompte">lancer decompte</button>
+                </div>
+            </div>
+
         </div>
 
         <div id="whowin" class="whowin">
-            Qui à gagné ?
-            <button id="nothing">Ils on gagné</button>
-            <button id="iwin">j'ai gagné</button>
+            <div class="container">
+                <h3>Qui à gagné ?</h3>
+                <div class="bouttons">
+                    <button id="nothing">Ils on gagné</button>
+                    <button id="iwin">j'ai gagné</button>
+                </div>
+            </div>
         </div>
 
         <script src="app.js"></script>
-
-        <script>
-            let erica = "Erica"
-            
-            let users = [
-                {
-                    name: 'George',                    
-                    age: 28
-                }, {
-                    name: 'Erica',                    
-                    age: 50
-                }, {
-                    name: 'Leo',                    
-                    age: 20
-                }
-            ];
-
-            console.log(users.find(user => user.name === erica))
-        </script>
     </body>
 </html>
