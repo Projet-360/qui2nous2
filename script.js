@@ -187,13 +187,6 @@ class UI{
       list.appendChild(row); 
   }
 
-  static editPlayerToList(player){
-      selectedRow.children[0].textContent= player.title;      
-
-      document.querySelector(".sumbit_btn").value="Submit";
-      document.querySelector(".sumbit_btn").classList="btn btn-success btn-block add-btn sumbit_btn";
-  }
-
   static deleteEmpyee(el){
       if(el.classList.contains("delete")){
         let getid = parseInt(el.parentElement.parentElement.id)
@@ -202,7 +195,8 @@ class UI{
 
         arrayPlayer.splice( index , 1);
 
-        el.parentElement.parentElement.remove();
+        //el.parentElement.parentElement.remove();
+        UI.displayplayer()
         UI.showAlert("Player deleted", "danger");
       }else{
           null;
@@ -211,17 +205,39 @@ class UI{
 
   static editPlayer(el){
       if(el.classList.contains('edit')){
-          selectedRow = el.parentElement.parentElement;
-          document.querySelector("#title").value = selectedRow.children[0].textContent;
+        selectedRow = el.parentElement.parentElement;
 
-          let getid = parseInt(el.parentElement.parentElement.id)
-          let index = arrayPlayer.findIndex(x => x.id === getid);
+        document.querySelector("#title").value = selectedRow.children[0].textContent
 
-          arrayPlayer[index].title = document.querySelector("#title").value
+        document.querySelector(".sumbit_btn").value="Update";
+        document.querySelector(".sumbit_btn").classList="btn btn-primary btn-block add-btn update_btn";
+        document.querySelector(".update_btn").setAttribute('type', 'update');
 
-          document.querySelector(".sumbit_btn").value="Update";
-          document.querySelector(".sumbit_btn").classList="btn btn-primary btn-block add-btn sumbit_btn"; 
+        document.querySelector('.update_btn').addEventListener('click', (e) => {
+          UI.changeName(el)
+        },{ once: true })
+          
       }else{null}
+  }
+
+  static changeName(el) {
+    selectedRow = el.parentElement.parentElement;
+    let getid = parseInt(selectedRow.id)
+    let index = arrayPlayer.findIndex(x => x.id === getid);
+    
+    let valueArray = arrayPlayer[index].title
+    let valueInput = document.querySelector("#title").value
+
+   arrayPlayer[index].title = document.querySelector("#title").value
+    UI.clearFields(); 
+    UI.displayplayer()
+
+    document.querySelector(".update_btn").value = "submit";
+    document.querySelector(".update_btn").classList="btn btn-success btn-block add-btn sumbit_btn";
+    document.querySelector(".sumbit_btn").setAttribute('type', 'submit');
+   
+   selectedRow = null;
+   UI.showAlert('Player Info Edited', 'info');  
   }
 
   static showAlert(message, className) {
@@ -257,16 +273,10 @@ document.querySelector('#player-form').addEventListener('submit', (e) => {
     const player = new Player(title, id);
     arrayPlayer.push(player)
 
-
-    if (selectedRow == null) {    
       UI.AddPlayerToList(player);
       selectedRow = null;
       UI.showAlert('Player Added', 'success');
-    } else {
-      UI.editPlayerToList(player);
-      selectedRow = null;
-      UI.showAlert('Player Info Edited', 'info');
-    }
+
       UI.clearFields();
   }
 });
@@ -275,6 +285,7 @@ document.querySelector('#player-list').addEventListener('click', (e) => {
   UI.deleteEmpyee(e.target);
   UI.editPlayer(e.target);
 });
+
 
 document.querySelector('#start').addEventListener('click', () => {
   if (arrayPlayer.length === 0) {
