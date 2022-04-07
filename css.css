@@ -1,0 +1,22 @@
+body {
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+}
+
+.cont {
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    padding: 0px 10vw;
+}
+
+#piocher-container,
+#question-container,
+#counter-container,
+#winner-container {
+    display: none;
+    opacity: 0;
+}
