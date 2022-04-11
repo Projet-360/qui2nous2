@@ -8,7 +8,6 @@ body {
   width: 100vw;
   height: 100vh;
   position: absolute;
-  padding: 0px 10vw;
 }
 
 #piocher-container,
@@ -17,5 +16,113 @@ body {
 #winner-container {
   display: none;
   opacity: 0;
+}
+
+#player-container {
+  position: relative;
+}
+
+#player-container .container-form {
+  background-color: yellow;
+  height: 40vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#player-container .container-form #player-form {
+  background-color: green;
+  width: 90vw;
+  height: 30vh;
+  padding-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#player-container .container-form #player-form h1 {
+  margin: 0;
+  font-size: 8vw;
+}
+
+#player-container .container-form #player-form p {
+  margin: 0;
+  font-size: 5vw;
+}
+
+#player-container .container-form #player-form label {
+  display: none;
+}
+
+#player-container .container-form #player-form .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 30px;
+  padding: 0px 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#player-container .container-form #player-form .form-group .form-control {
+  height: 25px;
+  width: 80%;
+  border: none;
+}
+
+#player-container .container-form #player-form input[type="submit"] {
+  font-size: 0 !important;
+  background: red;
+  background-image: url(../../sources/icon/user-plus-solid.svg);
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+  width: 27px;
+  height: 27px;
+  border-radius: 4px;
+}
+
+#player-container #start {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#player-container .player-list {
+  background-color: green;
+  height: 60vh;
 }
 /*# sourceMappingURL=css.css.map */
