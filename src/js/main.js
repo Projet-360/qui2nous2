@@ -61,8 +61,12 @@ class App {
       UIPlayer.loose()
     })
 
-    document.querySelector('#refusepoint').addEventListener('click', () => {
-      UIPlayer.loose()
+    document.querySelector('#addPlayer').addEventListener('click', () => {
+      const container = document.querySelector('.container-form')
+      container.style.opacity = "1"
+      setTimeout(function(){
+        container.style.visibility = "visible"
+      }, 10);
     })
   }
 }

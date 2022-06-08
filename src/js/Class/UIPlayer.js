@@ -97,9 +97,11 @@ export default class UIPlayer {
         e.preventDefault();
       
         const title = document.querySelector('#title').value;
-      
+
+
         if(title === '') {
-          UIDesign.showAlert('Please fill in all fields', 'danger');
+          UIDesign.showAlert('Entrez le nom du joueur', 'danger');
+          
         } else {
           
           id = Date.now()
@@ -111,6 +113,13 @@ export default class UIPlayer {
           UIDesign.showAlert('Player Added', 'success');
     
           UIPlayer.clearFields();
+
+          const container = document.querySelector('.container-form')
+          container.style.opacity = "0"
+          setTimeout(function(){
+            container.style.visibility = "hidden"
+          }, 10);
+        
         }
     }
 
@@ -152,8 +161,6 @@ export default class UIPlayer {
     
         const list = document.querySelector("#question-container #question");
         list.innerHTML=`
-        Choisissez deux joueurs et posez leur cette question <br>
-        une fois la question posée lancer le compte a rebour<br>
          ${questionsSelected}
         `
       }

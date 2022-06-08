@@ -52,20 +52,19 @@
       <div class="cont-array row">
         <div class="container-form">
           <form id="player-form" autocomplete="off">
-            <h1>Bienvenue,</h1>
-            <p>Entrez un nouveau joueur</p>
             <div class="form-group">
               <label for="title">Name</label>
-              <input type="text" id="title" class="form-control">
-              <input type="submit" value="Submit" class="btn btn-success btn-block add-btn sumbit_btn">
+              <input type="text" id="title" class="form-control" placeholder="Nom du joueur">
+              <input type="submit" value="Submit" class="btn btn-success btn-block add-btn sumbit_btn" >
             </div>          
+            <button>retour</button>
           </form>
         </div>
         <div class="player-list">
           <table class="table table-striped mt-5">
             <thead>
               <tr>
-                <th>Name</th>
+                <th>Joueur</th>
                 <th></th>
                 <th></th>
               </tr>
@@ -73,6 +72,9 @@
             <tbody id="player-list"></tbody>
           </table>
         </div>
+        <button id="addPlayer" class="addPlayer">
+          +
+        </button>
         <button id="start" class="btn btn-success btn-block add-btn sumbit_btn">commencer la partie</button>
       </div>
     </section>
