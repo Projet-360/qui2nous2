@@ -9,10 +9,17 @@ body {
 }
 
 .cont {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
     width: 100vw;
     height: 100vh;
 
-    position: absolute;
+    position: absolute !important;
 }
 
 #piocher-container,
@@ -31,4 +38,29 @@ body {
 
 .themeUl .selectedTheme {
     color: red;
+}
+
+.alert {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    
+    width: 100vw;
+    height: 100vh;    
+
+    position: absolute;
+    text-align: center;
+    box-sizing:border-box;
+
+    font-size: 30px;
+    padding: 10vw;
+    background-color: black;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    z-index: 200;
 }

@@ -7,18 +7,18 @@ export default class UIDesign {
     
     static showAlert(message, className) {
         const div = document.createElement('div');
-        const container = document.querySelector('.cont');
-        const main = document.querySelector('.cont-array');
+        const container = document.querySelector('main');;
   
   
         div.className = `alert alert-${className}`;
         div.appendChild(document.createTextNode(message));
-        div.style.position = "absolute";
-        div.style.top = "30px";
-        div.style.left = "90%";
+
   
-        container.insertBefore(div, main);
-        setTimeout(() => document.querySelector('.alert').remove(), 3000);
+        container.after(div, container);
+        setTimeout(() => 
+        document.querySelector('.alert').remove()
+        , 1000);
+
       }
 
     static counter() {

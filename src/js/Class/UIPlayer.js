@@ -117,7 +117,7 @@ export default class UIPlayer {
 
     static startGame() {
       if (arrayPlayer.length === 0) {
-        console.log('vous devez entrer des joueurs');
+        UIDesign.showAlert('Ajoutez les joueurs pour continuer', 'danger');
     
       } else {
         if ( selectedPlayerIndex > arrayPlayer.length - 1) {
@@ -246,11 +246,13 @@ export default class UIPlayer {
       questionArray = finalArray
 
       if (questionArray.length > 0 ) {
+
         let container = document.getElementById('theme')
         container.style.opacity = '0'
-        setTimeout(
-          container.style.visibility = 'hidden'
-          , 1000);
+        setTimeout(container.style.visibility= "hidden", 1000);
+
+      } else {
+        UIDesign.showAlert('Selectionnez un theme ou plusieurs', 'danger');
       }
     }
 
