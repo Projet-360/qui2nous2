@@ -1,0 +1,17 @@
+.rules {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: yellow;
+    z-index: 80;
+
+    &.is-opacity {
+        opacity: 0;
+        transition: opacity .5s ease;
+    }
+    &.is-out {
+        visibility: hidden;
+    }
+}

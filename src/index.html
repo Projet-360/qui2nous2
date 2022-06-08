@@ -23,59 +23,84 @@
 </head>
 
 <body class="fullscreen">
+  <main class="main" id="main">
+    <section id="loader" class="loader">
+      <h1>Chargement</h1>
+    </section>
+  
+    <!-- <section id="explain" class="explain">
+      <h1>voulez vous découvrir les rêgles</h1>
+      <button id="yes">oui</button>
+      <button id="skip">non</button>
+    </section>
+  
+    <section id="rules" class="rules">
+      <button id="yes">oui</button>
+      <button id="skip">non</button>
+    </section> -->
+    
+    <section id="theme" class="theme">
+      <h1>Choisissez un thème</h1>
+      <ul class="themeUl">
+        <li id="QuestionGeneral">Genaral</li>
+        <li id="QuestionAdulte">-18</li>
+      </ul>
+      <button id="themeSubmit">valider</button>
+    </section>
 
-  <section id="player-container" class="cont">
-    <div class="main row">
-      <div class="container-form">
-        <form id="player-form" autocomplete="off">
-          <h1>Bienvenue,</h1>
-          <p>Entrez un nouveau joueur</p>
-          <div class="form-group">
-            <label for="title">Name</label>
-            <input type="text" id="title" class="form-control">
-            <input type="submit" value="Submit" class="btn btn-success btn-block add-btn sumbit_btn">
-          </div>          
-        </form>
+    <section id="player-container" class="cont">
+      <div class="cont-array row">
+        <div class="container-form">
+          <form id="player-form" autocomplete="off">
+            <h1>Bienvenue,</h1>
+            <p>Entrez un nouveau joueur</p>
+            <div class="form-group">
+              <label for="title">Name</label>
+              <input type="text" id="title" class="form-control">
+              <input type="submit" value="Submit" class="btn btn-success btn-block add-btn sumbit_btn">
+            </div>          
+          </form>
+        </div>
+        <div class="player-list">
+          <table class="table table-striped mt-5">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="player-list"></tbody>
+          </table>
+        </div>
+        <button id="start" class="btn btn-success btn-block add-btn sumbit_btn">commencer la partie</button>
       </div>
-      <div class="player-list">
-        <table class="table table-striped mt-5">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody id="player-list"></tbody>
-        </table>
-      </div>
-      <button id="start" class="btn btn-success btn-block add-btn sumbit_btn">commencer la partie</button>
-    </div>
-  </section>
+    </section>
+  
+    <section id="piocher-container" class="cont">
+      <div id="piocher-container-title"></div>
+      <button id="showquestion" class="btn btn-success btn-block add-btn sumbit_btn"> Piocher une question
+      </button>
+    </section>
+  
+    <section id="question-container" class="cont">
+      <div id="question"></div>
+      <button id="showcounter" class="btn btn-success btn-block add-btn sumbit_btn">
+        Lancer le décompte
+      </button>
+    </section>
+  
+    <section id="counter-container" class="cont">
+    </section>
+  
+    <section id="winner-container" class="cont">
+      <button id="addpoint" type="addpoint" value="addpoint" class="btn btn-success btn-block add-btn sumbit_btn">J'ai
+        gagné</button>
+      <button id="refusepoint" class="btn btn-success btn-block add-btn sumbit_btn">J'ai perdu</button>
+    </section>
+  </main>
 
-  <section id="piocher-container" class="cont">
-    <div id="piocher-container-title"></div>
-    <button id="showquestion" class="btn btn-success btn-block add-btn sumbit_btn"> Piocher une question
-    </button>
-  </section>
-
-  <section id="question-container" class="cont">
-    <div id="question"></div>
-    <button id="showcounter" class="btn btn-success btn-block add-btn sumbit_btn">
-      Lancer le décompte
-    </button>
-  </section>
-
-  <section id="counter-container" class="cont">
-  </section>
-
-  <section id="winner-container" class="cont">
-    <button id="addpoint" type="addpoint" value="addpoint" class="btn btn-success btn-block add-btn sumbit_btn">J'ai
-      gagné</button>
-    <button id="refusepoint" class="btn btn-success btn-block add-btn sumbit_btn">J'ai perdu</button>
-  </section>
-
-  <script src="js/script.js"></script>
+  <script type="module" src="js/main.js"></script>
   <script src="js/pwaScript.js"></script>
 </body>
 

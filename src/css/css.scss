@@ -2,6 +2,9 @@ body {
     width: 100vw;
     height: 100vh;
 
+    color: white;
+    background-color: rgb(37, 37, 37);
+
     position: absolute;
 }
 
@@ -20,4 +23,12 @@ body {
     opacity: 0;
 }
 
-@import 'pages/player'
+@import 'pages/player';
+@import 'pages/loader';
+@import 'pages/rules';
+@import 'pages/theme';
+@import 'pages/explain';
+
+.themeUl .selectedTheme {
+    color: red;
+}

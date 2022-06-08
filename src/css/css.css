@@ -1,6 +1,8 @@
 body {
   width: 100vw;
   height: 100vh;
+  color: white;
+  background-color: #252525;
   position: absolute;
 }
 
@@ -125,4 +127,95 @@ body {
   background-color: green;
   height: 60vh;
 }
-/*# sourceMappingURL=css.css.map */
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 100;
+}
+
+.loader.is-opacity {
+  opacity: 0;
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+}
+
+.loader.is-out {
+  visibility: hidden;
+}
+
+.loader h1 {
+  color: white;
+}
+
+.rules {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: yellow;
+  z-index: 80;
+}
+
+.rules.is-opacity {
+  opacity: 0;
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+}
+
+.rules.is-out {
+  visibility: hidden;
+}
+
+.theme {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 80;
+}
+
+.theme.is-opacity {
+  opacity: 0;
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+}
+
+.theme.is-out {
+  visibility: hidden;
+}
+
+.explain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 90;
+}
+
+.explain.is-opacity {
+  opacity: 0;
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+}
+
+.explain.is-out {
+  visibility: hidden;
+}
+
+.explain h1 {
+  color: white;
+}
+
+.themeUl .selectedTheme {
+  color: red;
+}
