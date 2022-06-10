@@ -125,7 +125,8 @@
       </div>
       <div class="player-list">
         {#each players as player}
-        <div class="card"  class:active="{active}" on:click="{() => {cardActive();}}">
+        <div class="card"  	class:active="{cardActive ===  player.name}"
+                            on:click="{() => cardActive =  player.name}">
           <span>
             <div class="name">
               {player.name}  
