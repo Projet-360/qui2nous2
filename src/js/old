@@ -215,7 +215,7 @@ class App {
         list.appendChild(row); 
     }
   
-    static deleteEmpyee(el){
+    static deletePlayer(el){
         if(el.classList.contains("delete")){
           let getid = parseInt(el.parentElement.parentElement.id)
   
@@ -310,7 +310,7 @@ class App {
   });
   
   document.querySelector('#player-list').addEventListener('click', (e) => {
-    UI.deleteEmpyee(e.target);
+    UI.deletePlayer(e.target);
     UI.editPlayer(e.target);
   });
   
@@ -331,7 +331,7 @@ class App {
       let questionsSelected = questions[(Math.random() * questions.length) | 0]
       console.log(selectedPlayer);
   
-      const playerContainer = document.getElementById('player-container')
+      const playerContainer = document.getElementById('player')
   
       playerContainer.style.opacity = "0"
       setTimeout(function(){
@@ -408,7 +408,7 @@ class App {
       winnerContainer.style.display = "none"
     }, 10);
   
-    const playerContainer = document.getElementById('player-container')
+    const playerContainer = document.getElementById('player')
     
     playerContainer.style.display = "block"
     setTimeout(function(){
@@ -424,7 +424,7 @@ class App {
       winnerContainer.style.display = "none"
     }, 10);
   
-    const playerContainer = document.getElementById('player-container')
+    const playerContainer = document.getElementById('player')
     
     playerContainer.style.display = "block"
     setTimeout(function(){

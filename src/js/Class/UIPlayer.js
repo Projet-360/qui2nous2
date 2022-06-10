@@ -13,7 +13,8 @@ let questionArray = []
 
 
 export default class UIPlayer {
-    
+
+
     static displayplayer(){
       let newArrayPlayer
       newArrayPlayer = arrayPlayer
@@ -36,7 +37,7 @@ export default class UIPlayer {
         list.appendChild(row); 
     }
   
-    static deleteEmpyee(el){
+    static deletePlayer(el){
         if(el.classList.contains("delete")){
           let getid = parseInt(el.parentElement.parentElement.id)
   
@@ -46,7 +47,7 @@ export default class UIPlayer {
   
           //el.parentElement.parentElement.remove();
           UIPlayer.displayplayer()
-          UIDesign.showAlert("Player deleted", "danger");
+          //UIDesign.showAlert("Player deleted", "danger");
         }else{
             null;
         }
@@ -86,7 +87,7 @@ export default class UIPlayer {
       document.querySelector(".sumbit_btn").setAttribute('type', 'submit');
     
     selectedRow = null;
-    UIDesign.showAlert('Player Info Edited', 'info');  
+    //UIDesign.showAlert('Player Info Edited', 'info');  
     }
   
     static clearFields() {
@@ -100,7 +101,7 @@ export default class UIPlayer {
 
 
         if(title === '') {
-          UIDesign.showAlert('Entrez le nom du joueur', 'danger');
+          //UIDesign.showAlert('Entrez le nom du joueur', 'danger');
           
         } else {
           
@@ -110,23 +111,16 @@ export default class UIPlayer {
           
           UIPlayer.AddPlayerToList(player);
           selectedRow = null;
-          UIDesign.showAlert('Player Added', 'success');
+          //UIDesign.showAlert('Player Added', 'success');
     
           UIPlayer.clearFields();
-
-          const container = document.querySelector('.container-form')
-          container.style.opacity = "0"
-          setTimeout(function(){
-            container.style.visibility = "hidden"
-          }, 10);
-        
         }
     }
 
 
     static startGame() {
       if (arrayPlayer.length === 0) {
-        UIDesign.showAlert('Ajoutez les joueurs pour continuer', 'danger');
+        //UIDesign.showAlert('Ajoutez les joueurs pour continuer', 'danger');
     
       } else {
         if ( selectedPlayerIndex > arrayPlayer.length - 1) {
@@ -140,7 +134,7 @@ export default class UIPlayer {
     
         let questionsSelected = questionArray[(Math.random() * questionArray.length) | 0]
     
-        const playerContainer = document.getElementById('player-container')
+        const playerContainer = document.getElementById('player')
     
         playerContainer.style.opacity = "0"
         setTimeout(function(){
@@ -176,7 +170,7 @@ export default class UIPlayer {
         winnerContainer.style.display = "none"
       }, 10);
     
-      const playerContainer = document.getElementById('player-container')
+      const playerContainer = document.getElementById('player')
       
       playerContainer.style.display = "block"
       setTimeout(function(){
@@ -191,7 +185,7 @@ export default class UIPlayer {
         winnerContainer.style.display = "none"
       }, 10);
     
-      const playerContainer = document.getElementById('player-container')
+      const playerContainer = document.getElementById('player')
       
       playerContainer.style.display = "block"
       setTimeout(function(){
@@ -255,11 +249,8 @@ export default class UIPlayer {
       if (questionArray.length > 0 ) {
 
         let container = document.getElementById('theme')
-        container.style.opacity = '0'
-        setTimeout(container.style.visibility= "hidden", 1000);
-
       } else {
-        UIDesign.showAlert('Selectionnez un theme ou plusieurs', 'danger');
+        //UIDesign.showAlert('Selectionnez un theme ou plusieurs', 'danger');
       }
     }
 

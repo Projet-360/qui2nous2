@@ -1,109 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-
-  <title>Qui2Vous2</title>
-
-  <link rel="manifest" href="/manifest.json">
-  <link rel="stylesheet" href="css/pwaStyle.css">
-  <link rel="stylesheet" href="css/css.css">
-
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="apple-touch-icon" href="/icons/app-icon-152.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fff" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Qui2Vous2">
-  <meta name="msapplication-TileImage" content="/icons/app-icon-144.png">
-  <meta name="msapplication-TileColor" content="#fff">
-  <meta name="description" content="Example of a progressive web app">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Progressive Web Application</title>
+	
 </head>
-
-<body class="fullscreen">
-  <main class="main" id="main">
-    <section id="loader" class="loader cont">
-      <h1>Chargement</h1>
-    </section>
-  
-    <!-- <section id="explain" class="explain">
-      <h1>voulez vous découvrir les rêgles</h1>
-      <button id="yes">oui</button>
-      <button id="skip">non</button>
-    </section>
-  
-    <section id="rules" class="rules">
-      <button id="yes">oui</button>
-      <button id="skip">non</button>
-    </section> -->
-    
-    <section id="theme" class="theme cont">
-      <h1>Choisissez un thème</h1>
-      <ul class="themeUl">
-        <li id="QuestionGeneral">Genaral</li>
-        <li id="QuestionAdulte">-18</li>
-      </ul>
-      <button id="themeSubmit">valider</button>
-    </section>
-
-    <section id="player-container" class="cont">
-      <div class="cont-array row">
-        <div class="container-form">
-          <form id="player-form" autocomplete="off">
-            <div class="form-group">
-              <label for="title">Name</label>
-              <input type="text" id="title" class="form-control" placeholder="Nom du joueur">
-              <input type="submit" value="Submit" class="btn btn-success btn-block add-btn sumbit_btn" >
-            </div>          
-            <button>retour</button>
-          </form>
-        </div>
-        <div class="player-list">
-          <table class="table table-striped mt-5">
-            <thead>
-              <tr>
-                <th>Joueur</th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="player-list"></tbody>
-          </table>
-        </div>
-        <button id="addPlayer" class="addPlayer">
-          +
-        </button>
-        <button id="start" class="btn btn-success btn-block add-btn sumbit_btn">commencer la partie</button>
-      </div>
-    </section>
-  
-    <section id="piocher-container" class="cont">
-      <div id="piocher-container-title"></div>
-      <button id="showquestion" class="btn btn-success btn-block add-btn sumbit_btn"> Piocher une question
-      </button>
-    </section>
-  
-    <section id="question-container" class="cont">
-      <div id="question"></div>
-      <button id="showcounter" class="btn btn-success btn-block add-btn sumbit_btn">
-        Lancer le décompte
-      </button>
-    </section>
-  
-    <section id="counter-container" class="cont">
-    </section>
-  
-    <section id="winner-container" class="cont">
-      <button id="addpoint" type="addpoint" value="addpoint" class="btn btn-success btn-block add-btn sumbit_btn">J'ai
-        gagné</button>
-      <button id="refusepoint" class="btn btn-success btn-block add-btn sumbit_btn">J'ai perdu</button>
-    </section>
-  </main>
-
-  <script type="module" src="js/main.js"></script>
-  <script src="js/pwaScript.js"></script>
+<body>
+	<noscript>Please, wait until app is loaded</noscript>
 </body>
-
 </html>

@@ -1,0 +1,467 @@
+@mixin colorFont($g, $y, $r) {
+    background: linear-gradient(-45deg, $g, darken($g, 5%), $y, darken($y, 5%), $r, darken($r, 5%));
+    background-size: 400% 400%;
+    animation: GradientColor 20s ease infinite;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+}
+
+@mixin Button($g, $y, $r, $w, $h) {
+
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    position: relative;
+    width: $w;
+    height: $h;
+
+
+    filter: invert(1);
+
+    &::before {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $w;
+        height: $h;
+        background: linear-gradient(-45deg, $g, darken($g, 5%), $y, darken($y, 5%), $r, darken($r, 5%));
+        background-size: 400% 400%;
+        animation: GradientColor 20s ease infinite;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px 0 rgba(rgb(255, 255, 255), 0.1);
+    }
+
+    span {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        background: #fefbf0;
+
+        width: $w - 3px;
+        height: $h - 3px;
+        font-size: 10px;
+        font-weight: bold;
+        line-height: 1.5;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        mix-blend-mode: screen;
+        border-radius: 20px;
+        box-sizing: border-box;
+
+        transition: all .5s ease;
+        transform: scale(1);
+    }
+
+    &:hover {
+        span {
+            transform: scale(0.9);
+            cursor: pointer;
+        }
+
+        cursor: pointer;
+    }
+
+
+    @keyframes GradientColor {
+
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+}
+
+@mixin addPlayer($g, $y, $r) {
+    $x: 40px;
+
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    position: relative;
+    width: $x;
+    height: $x;
+
+
+    filter: invert(1);
+
+    &::before {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $x;
+        height: $x;
+        background: linear-gradient(-45deg, $g, darken($g, 5%), $y, darken($y, 5%), $r, darken($r, 5%));
+        background-size: 400% 400%;
+        animation: GradientColor 20s ease infinite;
+        border-radius: 50%;
+        box-shadow: 0 10px 20px 0 rgba(rgb(255, 255, 255), 0.1);
+    }
+
+    span {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        background: #fefbf0;
+
+        width: $x - 3px;
+        height: $x - 3px;
+        font-size: 10px;
+        font-weight: bold;
+        line-height: 1.5;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        mix-blend-mode: screen;
+        border-radius: 50%;
+        box-sizing: border-box;
+
+        transition: all .5s ease;
+        transform: scale(1);
+    }
+
+    &:hover {
+        span {
+            transform: scale(0.9);
+            cursor: pointer;
+        }
+
+        cursor: pointer;
+    }
+
+
+    @keyframes GradientColor {
+
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+}
+
+@mixin Card($g, $y, $r) {
+    $w: 100%;
+    $h: 80px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    position: relative;
+    width: $w;
+    height: $h;
+
+    margin-bottom: 15px;
+    filter: invert(1);
+    overflow: hidden;
+
+
+    &::before {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $w;
+        height: $h;
+        background: linear-gradient(-45deg, $g, darken($g, 5%), $y, darken($y, 5%), $r, darken($r, 5%));
+        background-size: 400% 400%;
+        animation: GradientColor 20s ease infinite;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px 0 rgba(rgb(255, 255, 255), 0.1);
+    }
+
+    span {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        background: #fefbf0;
+
+        position: relative;
+        width: $w - 1%;
+        height: $h - 2px;
+        font-size: 10px;
+        font-weight: bold;
+        line-height: 1.5;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        mix-blend-mode: screen;
+        border-radius: 20px;
+        box-sizing: border-box;
+
+        transition: all .5s ease;
+        transform: translateX(0px);
+
+        .name {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 22px;
+            transform: translateX(20px);
+            transition: all .5s ease;
+        }
+        .point {
+            position: absolute;
+            right: 20px;
+            font-size: 60px;
+            font-weight: 100;
+        }
+    }
+    .edit {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 0px;
+        transition: all .5s ease;
+        opacity: 0;
+        visibility: hidden;
+
+        svg {
+            width: 15px;
+            height: 15px;
+            margin: 5px;
+        }
+    }
+    
+    &.active {
+        span {
+            transform: translateX(-60px);
+            cursor: pointer;
+
+            .name {
+                transform: translateX(50px);
+            }
+        }
+
+        .edit {
+            position: absolute;
+            right: 0;
+            height: 100%;
+            width: 60px;
+            opacity: 1;
+            visibility: visible;
+        }
+        cursor: pointer;
+
+        &:hover {
+            span {
+                transform: translateX(-60px);
+                cursor: pointer;
+                .name {
+                    transform: translateX(50px);
+                }
+            }
+
+            .edit {
+                width: 60px;
+            }
+        }
+    }
+
+
+    &:hover {
+        span {
+            transform: translateX(-20px);
+            cursor: pointer;
+
+            .name {
+                transform: translateX(30px);
+            }
+        }
+        cursor: pointer;
+
+        .edit {
+            position: absolute;
+            right: 0;
+            height: 100%;
+            width: 20px;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    @keyframes GradientColor {
+
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+}
+
+@mixin ThemeSelect($g, $y, $r) {
+    $w: 100%;
+    $h: 40px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    position: relative;
+    width: $w;
+    height: $h;
+
+    margin-bottom: 15px;
+    filter: invert(1);
+
+    &::before {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $w;
+        height: $h;
+        background: linear-gradient(-45deg, $g, darken($g, 5%), $y, darken($y, 5%), $r, darken($r, 5%));
+        background-size: 400% 400%;
+        animation: GradientColor 20s ease infinite;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px 0 rgba(rgb(255, 255, 255), 0.1);
+    }
+
+    span {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        background: #fefbf0;
+
+        width: $w - 3%;
+        height: $h - 3px;
+        font-size: 10px;
+        font-weight: bold;
+        line-height: 1.5;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        mix-blend-mode: screen;
+        border-radius: 20px;
+        box-sizing: border-box;
+
+        transition: all .5s ease;
+        transform: scale(1);
+    }
+
+    &:hover {
+        span {
+            transform: scale(0.9);
+            cursor: pointer;
+        }
+
+        cursor: pointer;
+    }
+
+    @keyframes GradientColor {
+
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+}
