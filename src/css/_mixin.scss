@@ -406,6 +406,13 @@
     margin-bottom: 15px;
     filter: invert(1);
 
+    &.selected {
+        span {
+            transition: all .5s ease;
+            transform: scale(.7) !important;
+        }
+    }
+
     &::before {
         content: ' ';
         position: absolute;
@@ -446,7 +453,7 @@
 
     &:hover {
         span {
-            transform: scale(0.9);
+            transform: scale(0.95);
             cursor: pointer;
         }
 

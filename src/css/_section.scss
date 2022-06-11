@@ -16,20 +16,21 @@ section {
     box-sizing: border-box;
   
     font-family: 'Open Sans', sans-serif;
-    transition: all .5s ease-in;
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 450, 0, 0, 1);
+    transition: all .25s ease-in;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 600, 0, 0, 1);
     
   }
   
   .section-out {
-    transform: matrix3d(1, 0, 0, 0, -0.6, 1, 0, 0, 0, 0, 1, 0, -450, 0, 0, 1);
+    transform: matrix3d(1, 0, 0, 0, -0.6, 1, 0, 0, 0, 0, 1, 0, -600, 0, 0, 1);
+    
   }
   
   .section-return {
-    transform: matrix3d(1, 0, 0, 0, -0.6, 1, 0, 0, 0, 0, 1, 0, 450, 0, 0, 1);
-    visibility: hidden;
-    opacity: 0;
-    transition: none;
+    transform: matrix3d(1, 0, 0, 0, -0.6, 1, 0, 0, 0, 0, 1, 0, 600, 0, 0, 1);
+    visibility: hidden !important;
+    opacity: 0 !important;
+    transition: none !important;
   }
   
   .section-show {

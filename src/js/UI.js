@@ -3,7 +3,7 @@ export default class UIDesign {
         
     }
 
-    static changeSection(present, entrant) {
+    static changeSectionHorizontal(present, entrant) {
         const containerPresent = document.getElementById(present)
         const containerEntrant = document.getElementById(entrant)
 

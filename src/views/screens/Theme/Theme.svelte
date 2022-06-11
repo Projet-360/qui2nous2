@@ -2,10 +2,10 @@
   import UI from "../../../js/UI";
 
   function returnSection() {
-    UI.changeSection('theme', 'rules')
+    UI.changeSectionHorizontal('theme', 'rules')
 	}
   function validateSection() {
-    UI.changeSection('theme', 'player')
+    UI.changeSectionHorizontal('theme', 'player')
 	}  
 
   let QuestionGeneral = false;

@@ -12,18 +12,7 @@
     name: "",
     point: 0,
   };
-  let players = [
-    {
-      id: 1,
-      name: "Valerie",
-      point: 0,
-    },
-    {
-      id: 2,
-      name: "Jack",
-      point: 0,
-    }
-  ]
+  let players = []
 
   $: value = players.name;
   let selectedPlayer  
@@ -51,6 +40,10 @@
     };
     isOpen = !isOpen;
   };
+
+  let onKeyPress = e => {
+    if (e.charCode === 13) addPlayer(), isOpen = !isOpen;
+  };  
 
   let deletePlayer = (id) => {
     players = players.filter(player => player.id !== id);
@@ -84,22 +77,22 @@
   };
 
   function returnSection() {
-    UI.changeSection('player', 'theme')
+    UI.changeSectionHorizontal('player', 'theme')
   }
 
   function start() {
-    UI.changeSection('player', 'theme')
+    UI.changeSectionHorizontal('player', 'theme')
   }
    
 </script>
 
-<section id="player">
+<section id="player" class:active={isOpen}>
       <h1>Joueurs</h1>
-      <div class="container-form" class:active={isOpen}>
+      <div class="container-form" >
         <form id="player-form" autocomplete="off">
           <div class="form-group">
             {#if isEdit === false}
-              <input bind:value={data.name} type="text" id="title" class="form-control" placeholder="Nom du joueur" >
+              <input bind:value={data.name} on:keypress={onKeyPress} type="text" id="title" class="form-control" placeholder="Nom du joueur" >
               <div id="bottom">
                 <button on:click|preventDefault="{() => isOpen = !isOpen}">
                   <span>retour</span>
@@ -126,7 +119,7 @@
       <div class="player-list">
         {#each players as player}
         <div class="card"  	class:active="{cardActive ===  player.name}"
-                            on:click="{() => cardActive =  player.name}">
+                            on:click="{() => cardActive = player.name}">
           <span>
             <div class="name">
               {player.name}  
