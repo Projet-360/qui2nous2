@@ -1,27 +1,27 @@
 <script>
-  import UIPlayer from "../../../js/Class/UIPlayer";
-  import Player from "../../../js/Class/Player";
   import UI from "../../../js/UI";
 
   import Trash from "./x/Trash";
   import Pen from "./x/Pen";
   import Add from "./x/Add";
 
+
+  export let players
+  export let selectedPlayer 
+  export let start
+
+  $: value = players.name;
+  let valueUpdate = "";
+
   let data = {
     id: null,
     name: "",
     point: 0,
   };
-  let players = []
-
-  $: value = players.name;
-  let selectedPlayer  
 
   let isEdit = false;
   let isOpen = false;
   let active = false;
-  let valueUpdate = "";
-  
 
   let cardActive = () => {
 		active = !active;
@@ -60,12 +60,6 @@
 
   let submitUpdatePlayer = (player) => {
 
-    let playerDB = {
-      id: player.id,
-      name: valueUpdate,
-      point: player.point,
-    };
-
     let objIndex = players.findIndex(obj => obj.id == playerDB.id);
     players[objIndex] = playerDB;
     data = {
@@ -79,17 +73,14 @@
   function returnSection() {
     UI.changeSectionHorizontal('player', 'theme')
   }
-
-  function start() {
-    UI.changeSectionHorizontal('player', 'theme')
-  }
-   
 </script>
 
 <section id="player" class:active={isOpen}>
+  
       <h1>Joueurs</h1>
+
       <div class="container-form" >
-        <form id="player-form" autocomplete="off">
+        <form id="player-form">
           <div class="form-group">
             {#if isEdit === false}
               <input bind:value={data.name} on:keypress={onKeyPress} type="text" id="title" class="form-control" placeholder="Nom du joueur" >
@@ -116,10 +107,11 @@
           </div>          
         </form>
       </div>
+
       <div class="player-list">
         {#each players as player}
-        <div class="card"  	class:active="{cardActive ===  player.name}"
-                            on:click="{() => cardActive = player.name}">
+        <div class="card"  	class:active="{cardActive ===  player}"
+                            on:click="{() => cardActive = player}">
           <span>
             <div class="name">
               {player.name}  
@@ -145,10 +137,12 @@
           <Add/>
         </span>
       </div>
+
       <div class="bottom" id="bottom">
         <button on:click|preventDefault={returnSection}>
           <span>Retour</span>
         </button>
+
         <button on:click|preventDefault={start}>
           <span>Commencer !</span>
         </button>

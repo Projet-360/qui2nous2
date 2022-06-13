@@ -1,0 +1,31 @@
+#question {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-content: stretch;
+    align-items: center;
+
+    padding: 0px;
+
+    button {
+        @include roundButton(#4fad19, #d9df35, #e95e06);
+        margin-bottom: 5vh;
+    }
+
+    h1 {
+        @include colorFont(#b052e6, #2620ca, #16a1f9);
+        font-size: 25px !important;
+        width: 80vw;
+        margin-bottom: 50px;
+    }
+
+    svg {
+        width: 100vw;
+        position: absolute;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+}

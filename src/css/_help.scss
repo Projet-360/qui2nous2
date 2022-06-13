@@ -1,0 +1,23 @@
+.help {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+    z-index: 200;
+    @include backgroundColor(#b052e6, #2620ca, #16a1f9);
+    border-radius: 50%;
+
+    svg {
+        position: relative !important;
+        width: 50px !important;
+        height: 50px !important;
+    }
+}

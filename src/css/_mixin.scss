@@ -121,6 +121,108 @@
 
 }
 
+@mixin roundButton($g, $y, $r) {
+    $w: 100px;
+    $h: 100px;
+
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
+    position: relative;
+    width: $w;
+    height: $h;
+
+
+    filter: invert(1);
+
+    &::before {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $w;
+        height: $h;
+        background: linear-gradient(-45deg, $g, darken($g, 5%), $y, darken($y, 5%), $r, darken($r, 5%));
+        background-size: 400% 400%;
+        animation: GradientColor 20s ease infinite;
+        border-radius: 50%;
+        box-shadow: 0 10px 50% 0 rgba(rgb(255, 255, 255), 0.1);
+    }
+
+    span {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        background: #fefbf0;
+
+        width: $w - 3px;
+        height: $h - 3px;
+        font-size: 10px;
+        font-weight: bold;
+        line-height: 1.5;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        mix-blend-mode: screen;
+        border-radius: 50%;
+        box-sizing: border-box;
+
+        transition: all .5s ease;
+        transform: scale(1);
+    }
+
+    &:hover {
+        span {
+            transform: scale(0.9);
+            cursor: pointer;
+        }
+
+        cursor: pointer;
+    }
+
+
+    @keyframes GradientColor {
+
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+}
+
 @mixin addPlayer($g, $y, $r) {
     $x: 40px;
 
@@ -319,8 +421,10 @@
     }
     
     &.active {
+        cursor: pointer;
+
         span {
-            transform: translateX(-60px);
+            transform: scaleX(0.9) translateX(-30px);
             cursor: pointer;
 
             .name {
@@ -336,27 +440,12 @@
             opacity: 1;
             visibility: visible;
         }
-        cursor: pointer;
-
-        &:hover {
-            span {
-                transform: translateX(-60px);
-                cursor: pointer;
-                .name {
-                    transform: translateX(50px);
-                }
-            }
-
-            .edit {
-                width: 60px;
-            }
-        }
     }
 
 
     &:hover {
         span {
-            transform: translateX(-20px);
+            transform: scaleX(0.96) translateX(-11px);
             cursor: pointer;
 
             .name {
@@ -460,6 +549,27 @@
         cursor: pointer;
     }
 
+    @keyframes GradientColor {
+
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+}
+
+@mixin backgroundColor($g, $y, $r) {
+
+    background: linear-gradient(-45deg, $g, darken($g, 5%), $y, darken($y, 5%), $r, darken($r, 5%));
+    background-size: 400% 400%;
+    animation: GradientColor 20s ease infinite;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px 0 rgba(rgb(255, 255, 255), 0.1);
+    
     @keyframes GradientColor {
 
         0%,

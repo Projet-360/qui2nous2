@@ -1,0 +1,96 @@
+#counter {
+    .number {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 80;
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+
+        transform: translateY(550px);
+          
+
+
+        span {
+            font-size: 500px;
+            margin: 0;
+            line-height: 400px;
+            @include colorFont(#b052e6, #2620ca, #16a1f9);
+            transition: all .5 ease-in-out;
+
+            &:nth-of-type(4) {
+                opacity: 0;
+            }
+        }
+    }
+
+    svg {
+        position: absolute;
+        transform: scale(.1);
+        bottom: -50vh;
+    }
+
+    
+    &.section-show {
+        .number {
+            animation-duration: 4s;
+            animation-name: slidein;
+            animation-delay: .5s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-in-out;
+
+            @keyframes slidein {
+                from {
+                    transform: translateY(550px);
+                }
+                33% {
+                    transform: translateY(200px);
+                }
+                66% {
+                    transform: translateY(-200px);
+                }
+                to {
+                    transform: translateY(-550px);
+                }
+            }
+        }
+
+        svg {
+            position: absolute;
+            left: 0;
+            transform: scale(.1);
+            bottom: -50vh;
+            animation-fill-mode: forwards;
+            animation-duration: 4.5s;
+            animation-name: slideSVG;
+            
+            animation-timing-function: ease-in-out;
+    
+            @keyframes slideSVG {
+                from {
+                    opacity: 0;
+                    bottom: -0vh;
+                    transform: scale(.1);
+                }
+
+                75% {
+                    opacity: 0;
+                    bottom: -50vh;
+                    transform: scale(.1) translate(10px, -60px)
+                }
+                to {
+                    opacity: 1;
+                    bottom: -30vh;
+                    transform: scale(3) translate(10px, -60px);
+                }
+            }
+        }
+    }
+}
