@@ -2,6 +2,8 @@
   import UI from "../../../js/UI";
 
   import Background from "./x/Background.svelte";
+  export let questionsSelected
+
   function draw() {
     UI.changeSectionCounter('question', 'counter', 'point')
   }
@@ -72,7 +74,7 @@
   </div>
   <Background ></Background>
     <h1>
-      Qui de vous deux est le lourd et chiant sur les bords ?
+      {questionsSelected}
     </h1>
       <button class="ThemeSelect" on:click={draw}>
         <span>Lancer le décompte</span>

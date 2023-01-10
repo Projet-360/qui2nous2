@@ -3,12 +3,11 @@ import Hand from "./x/Hand.svelte";
 import UI from "../../../js/UI";
 
 export let nameSelectedPlayer
+export let draw
 
 
 
-function draw() {
-    UI.changeSectionHorizontal('draw', 'question')
-	}
+
 </script>
 <section id="draw">
     <div id="piocher-container-title">

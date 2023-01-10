@@ -1,6 +1,22 @@
 export default class UIDesign {
-    constructor(){
-        
+    constructor() {
+        this.createPreloader()
+    }
+  
+    createPreloader() {
+      window.addEventListener('load', function (event) {
+        const loader = document.querySelector('#loader')
+        const rules = document.querySelector('#rules')
+  
+        rules.classList.add("section-show")
+  
+        setTimeout(function () {
+          loader.classList.add('is-opacity');
+        }, 1000);
+        setTimeout(function () {
+          loader.classList.add('is-out');
+        }, 1500);
+      });
     }
 
     static changeSectionHorizontal(present, entrant) {
@@ -12,8 +28,8 @@ export default class UIDesign {
         containerPresent.classList.add("section-out")
         containerEntrant.classList.add("section-show")
 
-        setTimeout(returnSection, 500);
-        setTimeout(cleanClassSection, 550);
+        setTimeout(returnSection, 400);
+        setTimeout(cleanClassSection, 450);
 
         function returnSection() {
             containerPresent.classList.remove("section-out")
@@ -35,10 +51,10 @@ export default class UIDesign {
         containerPresent.classList.add("section-out")
         containerEntrant.classList.add("section-show")
 
-        setTimeout(returnSection, 500);
-        setTimeout(cleanClassSection, 550);
+        setTimeout(returnSection, 400);
+        setTimeout(cleanClassSection, 450);
         setTimeout(cleanClassTimeOut, 4500);
-        setTimeout(cleanClassFinish, 5000);
+        setTimeout(cleanClassFinish, 5500);
 
         function returnSection() {
             containerPresent.classList.remove("section-out")
@@ -51,27 +67,17 @@ export default class UIDesign {
 
         function cleanClassTimeOut() {
             containerNext.classList.add("section-show")
-            containerEntrant.classList.add("section-fade")
+            containerEntrant.classList.add("section-out")
+            containerEntrant.classList.remove("section-show")
         }
 
         function cleanClassFinish() {
-            containerEntrant.classList.remove("section-show")
-            containerEntrant.classList.remove("section-fade")
+            containerEntrant.classList.remove("section-out")
         }
     }
-
-
     
     static discover() {
         const containerRules = document.getElementById('rules') 
-    }
-
-    static skip() {
-        const containerRules = document.getElementById('rules')
-        const containerTheme = document.getElementById('theme')
-        containerRules.classList.remove("section-show")
-        containerRules.classList.add("section-out")
-        containerTheme.classList.add("section-show")
-    }
-  
+    }  
 }
+new UIDesign()

@@ -409,10 +409,12 @@ section {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
-  -webkit-transition: all .25s ease-in;
-  transition: all .25s ease-in;
+  -webkit-transition: all .35s ease-in;
+  transition: all .35s ease-in;
   -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 600, 0, 0, 1);
           transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 600, 0, 0, 1);
+  visibility: hidden;
+  opacity: 0;
 }
 
 .section-out {
@@ -423,8 +425,6 @@ section {
 .section-return {
   -webkit-transform: matrix3d(1, 0, 0, 0, -0.6, 1, 0, 0, 0, 0, 1, 0, 600, 0, 0, 1);
           transform: matrix3d(1, 0, 0, 0, -0.6, 1, 0, 0, 0, 0, 1, 0, 600, 0, 0, 1);
-  visibility: hidden !important;
-  opacity: 0 !important;
   -webkit-transition: none !important;
   transition: none !important;
 }
@@ -432,6 +432,8 @@ section {
 .section-show {
   -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
           transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .section-fade {
@@ -1716,4 +1718,9 @@ li {
   left: 0;
   height: 15vh;
   width: 100%;
+}
+
+#loader {
+  visibility: visible;
+  opacity: 1;
 }

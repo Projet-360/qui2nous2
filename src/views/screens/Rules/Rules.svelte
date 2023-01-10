@@ -7,8 +7,6 @@ import UI from "../../../js/UI";
 	}
 
   function skip() {
-		//UI.skip()
-
     UI.changeSectionHorizontal('rules', 'theme')
 	}
 
