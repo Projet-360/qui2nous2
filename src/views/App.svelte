@@ -190,11 +190,12 @@
   let questionArray
   let allArrayQuestion = []
   let selectedArrayQuestion = []
+  let questionAsked = []
 
   let start = () => {
 
     if (players.length === 0) {
-      // UIDesign.showAlert('Ajoutez les joueurs pour continuer', 'danger');
+      UIDesign.showAlert('Ajoutez les joueurs pour continuer', 'danger');
       console.log('Il faut plus de jouerus');      
     } else {
 
@@ -214,7 +215,22 @@
 
   function draw() {
     questionsSelected = questionArray[(Math.random() * questionArray.length) | 0]
+    while (questionAsked.includes(questionsSelected)) {
+      questionsSelected = questionArray[(Math.random() * questionArray.length) | 0]
+    }
+
+    questionAsked.push(...[questionsSelected])
+      console.log(questionAsked);
     UI.changeSectionHorizontal('draw', 'question')
+
+    // if (questionAsked.includes(questionsSelected)) {
+    //   console.log("cette question a déjà été posé");
+
+    // }
+    // } else {
+    //   console.log("cette question n'a jamais été posé");
+
+    // }
 	}
 
   function validateSection() {
@@ -264,7 +280,7 @@
         UI.changeSectionHorizontal('theme', 'player');
 
       } else {
-        //UIDesign.showAlert('Selectionnez un theme ou plusieurs', 'danger');
+        UIDesign.showAlert('Selectionnez un theme ou plusieurs', 'danger');
       }
 
     

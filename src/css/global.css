@@ -7,119 +7,106 @@
  */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /* Sections
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * Remove the margin in all browsers.
-   */
+ * Remove the margin in all browsers.
+ */
 body {
   margin: 0;
 }
 
 /**
-   * Render the `main` element consistently in IE.
-   */
+ * Render the `main` element consistently in IE.
+ */
 main {
   display: block;
 }
 
 /**
-   * Correct the font size and margin on `h1` elements within `section` and
-   * `article` contexts in Chrome, Firefox, and Safari.
-   */
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
 /* Grouping content
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * 1. Add the correct box sizing in Firefox.
-   * 2. Show the overflow in Edge and IE.
-   */
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
 /**
-   * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
-   */
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * Remove the gray background on active links in IE 10.
-   */
+ * Remove the gray background on active links in IE 10.
+ */
 a {
   background-color: transparent;
 }
 
 /**
-   * 1. Remove the bottom border in Chrome 57-
-   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
-   */
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
 abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-  /* 2 */
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
-   * Add the correct font weight in Chrome, Edge, and Safari.
-   */
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
 b,
 strong {
   font-weight: bolder;
 }
 
 /**
-   * 1. Correct the inheritance and scaling of font size in all browsers.
-   * 2. Correct the odd `em` font sizing in all browsers.
-   */
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
-   * Add the correct font size in all browsers.
-   */
+ * Add the correct font size in all browsers.
+ */
 small {
   font-size: 80%;
 }
 
 /**
-   * Prevent `sub` and `sup` elements from affecting the line height in
-   * all browsers.
-   */
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
 sub,
 sup {
   font-size: 75%;
@@ -137,207 +124,187 @@ sup {
 }
 
 /* Embedded content
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * Remove the border on images inside links in IE 10.
-   */
+ * Remove the border on images inside links in IE 10.
+ */
 img {
   border-style: none;
 }
 
 /* Forms
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * 1. Change the font styles in all browsers.
-   * 2. Remove the margin in Firefox and Safari.
-   */
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
 button,
 input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
 }
 
 /**
-   * Show the overflow in IE.
-   * 1. Show the overflow in Edge.
-   */
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
 button,
-input {
-  /* 1 */
+input { /* 1 */
   overflow: visible;
 }
 
 /**
-   * Remove the inheritance of text transform in Edge, Firefox, and IE.
-   * 1. Remove the inheritance of text transform in Firefox.
-   */
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
 button,
-select {
-  /* 1 */
+select { /* 1 */
   text-transform: none;
 }
 
 /**
-   * Correct the inability to style clickable types in iOS and Safari.
-   */
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
 /**
-   * Remove the inner border and padding in Firefox.
-   */
+ * Remove the inner border and padding in Firefox.
+ */
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
 /**
-   * Restore the focus styles unset by the previous rule.
-   */
+ * Restore the focus styles unset by the previous rule.
+ */
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
 /**
-   * Correct the padding in Firefox.
-   */
+ * Correct the padding in Firefox.
+ */
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
 /**
-   * 1. Correct the text wrapping in Edge and IE.
-   * 2. Correct the color inheritance from `fieldset` elements in IE.
-   * 3. Remove the padding so developers are not caught out when they zero out
-   *    `fieldset` elements in all browsers.
-   */
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
 legend {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
 }
 
 /**
-   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
-   */
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
 progress {
   vertical-align: baseline;
 }
 
 /**
-   * Remove the default vertical scrollbar in IE 10+.
-   */
+ * Remove the default vertical scrollbar in IE 10+.
+ */
 textarea {
   overflow: auto;
 }
 
 /**
-   * 1. Add the correct box sizing in IE 10.
-   * 2. Remove the padding in IE 10.
-   */
-[type="checkbox"],
-[type="radio"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
 }
 
 /**
-   * Correct the cursor style of increment and decrement buttons in Chrome.
-   */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
 /**
-   * 1. Correct the odd appearance in Chrome and Safari.
-   * 2. Correct the outline style in Safari.
-   */
-[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
-   * Remove the inner padding in Chrome and Safari on macOS.
-   */
-[type="search"]::-webkit-search-decoration {
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
 /**
-   * 1. Correct the inability to style clickable types in iOS and Safari.
-   * 2. Change font properties to `inherit` in Safari.
-   */
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /* Interactive
-     ========================================================================== */
+   ========================================================================== */
 /*
-   * Add the correct display in Edge, IE 10+, and Firefox.
-   */
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
 details {
   display: block;
 }
 
 /*
-   * Add the correct display in all browsers.
-   */
+ * Add the correct display in all browsers.
+ */
 summary {
   display: list-item;
 }
 
 /* Misc
-     ========================================================================== */
+   ========================================================================== */
 /**
-   * Add the correct display in IE 10+.
-   */
+ * Add the correct display in IE 10+.
+ */
 template {
   display: none;
 }
 
 /**
-   * Add the correct display in IE 10.
-   */
+ * Add the correct display in IE 10.
+ */
 [hidden] {
   display: none;
 }
@@ -346,22 +313,19 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  -ms-touch-action: none;
-      touch-action: none;
+  touch-action: none;
 }
 
 main {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  background: #01040f;
+  box-sizing: border-box;
+  background: rgb(1, 4, 15);
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -370,8 +334,6 @@ main {
 /* Make content area fill the entire browser window */
 html,
 .fullscreen {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   height: 100%;
   margin: 0;
@@ -386,52 +348,36 @@ html,
 }
 
 section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
   width: 100%;
   height: 100vh;
   padding: 30px;
   position: absolute;
   top: 0;
   text-align: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-  -webkit-transition: all .35s ease-in;
-  transition: all .35s ease-in;
-  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 600, 0, 0, 1);
-          transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 600, 0, 0, 1);
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  transition: all 0.35s ease-in;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 600, 0, 0, 1);
   visibility: hidden;
   opacity: 0;
 }
 
 .section-out {
-  -webkit-transform: matrix3d(1, 0, 0, 0, -0.6, 1, 0, 0, 0, 0, 1, 0, -600, 0, 0, 1);
-          transform: matrix3d(1, 0, 0, 0, -0.6, 1, 0, 0, 0, 0, 1, 0, -600, 0, 0, 1);
+  transform: matrix3d(1, 0, 0, 0, -0.6, 1, 0, 0, 0, 0, 1, 0, -600, 0, 0, 1);
 }
 
 .section-return {
-  -webkit-transform: matrix3d(1, 0, 0, 0, -0.6, 1, 0, 0, 0, 0, 1, 0, 600, 0, 0, 1);
-          transform: matrix3d(1, 0, 0, 0, -0.6, 1, 0, 0, 0, 0, 1, 0, 600, 0, 0, 1);
-  -webkit-transition: none !important;
+  transform: matrix3d(1, 0, 0, 0, -0.6, 1, 0, 0, 0, 0, 1, 0, 600, 0, 0, 1);
   transition: none !important;
 }
 
 .section-show {
-  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-          transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   visibility: visible !important;
   opacity: 1 !important;
 }
@@ -441,23 +387,12 @@ section {
 }
 
 .help {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   position: absolute;
   top: 30px;
   right: 30px;
@@ -469,31 +404,25 @@ section {
   -webkit-animation: GradientColor 20s ease infinite;
           animation: GradientColor 20s ease infinite;
   border-radius: 20px;
-  -webkit-box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1);
-          box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1);
   border-radius: 50%;
 }
-
 @-webkit-keyframes GradientColor {
-  0%,
-  100% {
+  0%, 100% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
   }
 }
-
 @keyframes GradientColor {
-  0%,
-  100% {
+  0%, 100% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
   }
 }
-
 .help svg {
   position: relative !important;
   width: 50px !important;
@@ -501,66 +430,39 @@ section {
 }
 
 #loader {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) !important;
-          transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) !important;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) !important;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: #0a0a0a;
+  background-color: rgb(10, 10, 10);
   z-index: 100;
 }
-
 #loader.is-opacity {
   opacity: 0;
-  -webkit-transition: opacity .5s ease;
-  transition: opacity .5s ease;
+  transition: opacity 0.5s ease;
 }
-
 #loader.is-out {
   visibility: hidden;
 }
-
 #loader svg {
   height: 50vh;
 }
 
 #rules {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
@@ -568,11 +470,9 @@ section {
   height: 100vh;
   z-index: 80;
 }
-
 #rules svg {
   width: 100%;
 }
-
 #rules h1 {
   background: linear-gradient(-45deg, #b052e6, #a63ce3, #2620ca, #221db4, #16a1f9, #0695ef);
   background-size: 400% 400%;
@@ -580,12 +480,11 @@ section {
           animation: GradientColor 20s ease infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   text-align: left;
   width: 100%;
 }
-
 @-webkit-keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -597,7 +496,6 @@ section {
     background-position: 0% 50%;
   }
 }
-
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -609,13 +507,10 @@ section {
     background-position: 0% 50%;
   }
 }
-
 #rules.is-opacity {
   opacity: 0;
-  -webkit-transition: opacity .5s ease;
-  transition: opacity .5s ease;
+  transition: opacity 0.5s ease;
 }
-
 #rules.is-out {
   visibility: hidden;
 }
@@ -628,61 +523,41 @@ section {
   height: 100vh;
   z-index: 80;
 }
-
 #theme ul {
   padding: 0 !important;
   margin: 0 !important;
 }
-
 #theme .themeUl {
   width: 100%;
 }
-
 #theme.is-opacity {
   opacity: 0;
-  -webkit-transition: opacity .5s ease;
-  transition: opacity .5s ease;
+  transition: opacity 0.5s ease;
 }
-
 #theme.is-out {
   visibility: hidden;
 }
 
 #player {
   position: relative;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   top: 0vh;
   left: 0;
 }
-
 #player.active {
   top: 100vh;
 }
-
 #player.active .container-form {
   top: -100vh;
   left: 0;
 }
-
 #player .container-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   position: absolute;
   top: -100vh;
   left: 0;
@@ -694,12 +569,9 @@ section {
           animation: GradientColor 20s ease infinite;
   z-index: 1000;
   padding: 30px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  box-sizing: border-box;
+  transition: all 0.5s ease;
 }
-
 #player .container-form input {
   border-radius: 10px;
   width: 80vw;
@@ -707,38 +579,24 @@ section {
   padding: 10px;
   border: none;
 }
-
 #player #start {
   position: absolute;
   bottom: 0%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-
 #player .player-list {
   height: 65vh;
   width: 100%;
 }
 
 #draw {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   position: absolute;
   top: 0 !important;
   left: 0 !important;
@@ -746,59 +604,39 @@ section {
   height: 100vh;
   z-index: 80;
 }
-
 #draw svg {
   width: 60vw;
 }
-
 #draw #piocher-container-title h1:nth-of-type(1) {
-  -webkit-transform: rotate(-15deg);
-          transform: rotate(-15deg);
+  transform: rotate(-15deg);
   margin-bottom: 0;
   font-size: 70px;
 }
-
 #draw #piocher-container-title h1:nth-of-type(2) {
   text-align: center;
   font-size: 20px;
   text-transform: uppercase;
 }
-
 #draw .ThemeSelect {
   width: 80vw;
 }
-
 #draw.is-opacity {
   opacity: 0;
-  -webkit-transition: opacity .5s ease;
-  transition: opacity .5s ease;
+  transition: opacity 0.5s ease;
 }
-
 #draw.is-out {
   visibility: hidden;
 }
 
 #question {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-content: stretch;
+  align-items: center;
   padding: 0px;
 }
-
 #question button {
   border: none;
   margin: 0;
@@ -816,33 +654,20 @@ section {
   -moz-osx-font-smoothing: inherit;
   /* Corrects inability to style clickable `input` types in iOS */
   -webkit-appearance: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   position: relative;
   width: 100px;
   height: 100px;
-  -webkit-filter: invert(1);
-          filter: invert(1);
+  filter: invert(1);
   margin-bottom: 5vh;
 }
-
 #question button::before {
-  content: ' ';
+  content: " ";
   position: absolute;
   top: 0;
   left: 0;
@@ -853,28 +678,15 @@ section {
   -webkit-animation: GradientColor 20s ease infinite;
           animation: GradientColor 20s ease infinite;
   border-radius: 50%;
-  -webkit-box-shadow: 0 10px 50% 0 rgba(255, 255, 255, 0.1);
-          box-shadow: 0 10px 50% 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 50% 0 rgba(255, 255, 255, 0.1);
 }
-
 #question button span {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   background: #fefbf0;
   width: 97px;
   height: 97px;
@@ -885,34 +697,25 @@ section {
   letter-spacing: 1px;
   mix-blend-mode: screen;
   border-radius: 50%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+  transform: scale(1);
 }
-
 #question button:hover {
   cursor: pointer;
 }
-
 #question button:hover span {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  transform: scale(0.9);
   cursor: pointer;
 }
-
 @keyframes GradientColor {
-  0%,
-  100% {
+  0%, 100% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
   }
 }
-
 #question h1 {
   background: linear-gradient(-45deg, #b052e6, #a63ce3, #2620ca, #221db4, #16a1f9, #0695ef);
   background-size: 400% 400%;
@@ -924,7 +727,6 @@ section {
   width: 80vw;
   margin-bottom: 50px;
 }
-
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -936,14 +738,14 @@ section {
     background-position: 0% 50%;
   }
 }
-
 #question svg {
-  width: 100vw;
   position: absolute;
   width: 100vw;
   top: 0;
   left: 0;
   z-index: 100;
+  max-height: 45vh;
+  padding-top: 10px;
 }
 
 #counter .number {
@@ -953,27 +755,14 @@ section {
   width: 100%;
   height: 100vh;
   z-index: 80;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transform: translateY(550px);
-          transform: translateY(550px);
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  transform: translateY(550px);
 }
-
 #counter .number span {
   font-size: 500px;
   margin: 0;
@@ -984,10 +773,8 @@ section {
           animation: GradientColor 20s ease infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-transition: all .5 ease-in-out;
-  transition: all .5 ease-in-out;
+  transition: all 0.5 ease-in-out;
 }
-
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -999,74 +786,58 @@ section {
     background-position: 0% 50%;
   }
 }
-
 #counter .number span:nth-of-type(4) {
   opacity: 0;
 }
-
 #counter svg {
   position: absolute;
-  -webkit-transform: scale(0.1);
-          transform: scale(0.1);
+  transform: scale(0.1);
   bottom: -50vh;
 }
-
 #counter.section-show .number {
   -webkit-animation-duration: 4s;
           animation-duration: 4s;
   -webkit-animation-name: slidein;
           animation-name: slidein;
-  -webkit-animation-delay: .5s;
-          animation-delay: .5s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
 }
-
 @-webkit-keyframes slidein {
   from {
-    -webkit-transform: translateY(550px);
-            transform: translateY(550px);
+    transform: translateY(550px);
   }
   33% {
-    -webkit-transform: translateY(200px);
-            transform: translateY(200px);
+    transform: translateY(200px);
   }
   66% {
-    -webkit-transform: translateY(-200px);
-            transform: translateY(-200px);
+    transform: translateY(-200px);
   }
   to {
-    -webkit-transform: translateY(-550px);
-            transform: translateY(-550px);
+    transform: translateY(-550px);
   }
 }
-
 @keyframes slidein {
   from {
-    -webkit-transform: translateY(550px);
-            transform: translateY(550px);
+    transform: translateY(550px);
   }
   33% {
-    -webkit-transform: translateY(200px);
-            transform: translateY(200px);
+    transform: translateY(200px);
   }
   66% {
-    -webkit-transform: translateY(-200px);
-            transform: translateY(-200px);
+    transform: translateY(-200px);
   }
   to {
-    -webkit-transform: translateY(-550px);
-            transform: translateY(-550px);
+    transform: translateY(-550px);
   }
 }
-
 #counter.section-show svg {
   position: absolute;
   left: 0;
-  -webkit-transform: scale(0.1);
-          transform: scale(0.1);
+  transform: scale(0.1);
   bottom: -50vh;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
@@ -1077,46 +848,38 @@ section {
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
 }
-
 @-webkit-keyframes slideSVG {
   from {
     opacity: 0;
-    bottom: -0vh;
-    -webkit-transform: scale(0.1);
-            transform: scale(0.1);
+    bottom: 0vh;
+    transform: scale(0.1);
   }
   75% {
     opacity: 0;
     bottom: -50vh;
-    -webkit-transform: scale(0.1) translate(10px, -60px);
-            transform: scale(0.1) translate(10px, -60px);
+    transform: scale(0.1) translate(10px, -60px);
   }
   to {
     opacity: 1;
     bottom: -30vh;
-    -webkit-transform: scale(3) translate(10px, -60px);
-            transform: scale(3) translate(10px, -60px);
+    transform: scale(3) translate(10px, -60px);
   }
 }
-
 @keyframes slideSVG {
   from {
     opacity: 0;
-    bottom: -0vh;
-    -webkit-transform: scale(0.1);
-            transform: scale(0.1);
+    bottom: 0vh;
+    transform: scale(0.1);
   }
   75% {
     opacity: 0;
     bottom: -50vh;
-    -webkit-transform: scale(0.1) translate(10px, -60px);
-            transform: scale(0.1) translate(10px, -60px);
+    transform: scale(0.1) translate(10px, -60px);
   }
   to {
     opacity: 1;
     bottom: -30vh;
-    -webkit-transform: scale(3) translate(10px, -60px);
-            transform: scale(3) translate(10px, -60px);
+    transform: scale(3) translate(10px, -60px);
   }
 }
 
@@ -1137,35 +900,22 @@ section {
   -moz-osx-font-smoothing: inherit;
   /* Corrects inability to style clickable `input` types in iOS */
   -webkit-appearance: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   position: relative;
   width: 40px;
   height: 40px;
-  -webkit-filter: invert(1);
-          filter: invert(1);
+  filter: invert(1);
   position: absolute;
   top: 35px;
   right: 30px;
 }
-
 .addPlayer::before {
-  content: ' ';
+  content: " ";
   position: absolute;
   top: 0;
   left: 0;
@@ -1176,28 +926,15 @@ section {
   -webkit-animation: GradientColor 20s ease infinite;
           animation: GradientColor 20s ease infinite;
   border-radius: 50%;
-  -webkit-box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1);
-          box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1);
 }
-
 .addPlayer span {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   background: #fefbf0;
   width: 37px;
   height: 37px;
@@ -1208,74 +945,49 @@ section {
   letter-spacing: 1px;
   mix-blend-mode: screen;
   border-radius: 50%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+  transform: scale(1);
 }
-
 .addPlayer:hover {
   cursor: pointer;
 }
-
 .addPlayer:hover span {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  transform: scale(0.9);
   cursor: pointer;
 }
-
 @keyframes GradientColor {
-  0%,
-  100% {
+  0%, 100% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
   }
 }
-
 .addPlayer svg {
   width: 80%;
   height: 80%;
 }
 
 .ThemeSelect {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   height: 40px;
   margin-bottom: 15px;
-  -webkit-filter: invert(1);
-          filter: invert(1);
+  filter: invert(1);
 }
-
 .ThemeSelect.selected span {
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-  -webkit-transform: scale(0.7) !important;
-          transform: scale(0.7) !important;
+  transition: all 0.5s ease;
+  transform: scale(0.7) !important;
 }
-
 .ThemeSelect::before {
-  content: ' ';
+  content: " ";
   position: absolute;
   top: 0;
   left: 0;
@@ -1286,28 +998,15 @@ section {
   -webkit-animation: GradientColor 20s ease infinite;
           animation: GradientColor 20s ease infinite;
   border-radius: 20px;
-  -webkit-box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1);
-          box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1);
 }
-
 .ThemeSelect span {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   background: #fefbf0;
   width: 97%;
   height: 37px;
@@ -1318,27 +1017,19 @@ section {
   letter-spacing: 1px;
   mix-blend-mode: screen;
   border-radius: 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+  transform: scale(1);
 }
-
 .ThemeSelect:hover {
   cursor: pointer;
 }
-
 .ThemeSelect:hover span {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
+  transform: scale(0.95);
   cursor: pointer;
 }
-
 @keyframes GradientColor {
-  0%,
-  100% {
+  0%, 100% {
     background-position: 0% 50%;
   }
   50% {
@@ -1363,32 +1054,19 @@ button {
   -moz-osx-font-smoothing: inherit;
   /* Corrects inability to style clickable `input` types in iOS */
   -webkit-appearance: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   position: relative;
   width: 120px;
   height: 40px;
-  -webkit-filter: invert(1);
-          filter: invert(1);
+  filter: invert(1);
 }
-
 button::before {
-  content: ' ';
+  content: " ";
   position: absolute;
   top: 0;
   left: 0;
@@ -1399,28 +1077,15 @@ button::before {
   -webkit-animation: GradientColor 20s ease infinite;
           animation: GradientColor 20s ease infinite;
   border-radius: 20px;
-  -webkit-box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1);
-          box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1);
 }
-
 button span {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   background: #fefbf0;
   width: 117px;
   height: 37px;
@@ -1431,27 +1096,19 @@ button span {
   letter-spacing: 1px;
   mix-blend-mode: screen;
   border-radius: 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+  transform: scale(1);
 }
-
 button:hover {
   cursor: pointer;
 }
-
 button:hover span {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  transform: scale(0.9);
   cursor: pointer;
 }
-
 @keyframes GradientColor {
-  0%,
-  100% {
+  0%, 100% {
     background-position: 0% 50%;
   }
   50% {
@@ -1460,34 +1117,21 @@ button:hover span {
 }
 
 .card {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   height: 80px;
   margin-bottom: 15px;
-  -webkit-filter: invert(1);
-          filter: invert(1);
+  filter: invert(1);
   overflow: hidden;
 }
-
 .card::before {
-  content: ' ';
+  content: " ";
   position: absolute;
   top: 0;
   left: 0;
@@ -1498,28 +1142,15 @@ button:hover span {
   -webkit-animation: GradientColor 20s ease infinite;
           animation: GradientColor 20s ease infinite;
   border-radius: 20px;
-  -webkit-box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1);
-          box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 0.1);
 }
-
 .card span {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   background: #fefbf0;
   position: relative;
   width: 99%;
@@ -1531,81 +1162,54 @@ button:hover span {
   letter-spacing: 1px;
   mix-blend-mode: screen;
   border-radius: 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-  -webkit-transform: translateX(0px);
-          transform: translateX(0px);
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+  transform: translateX(0px);
 }
-
 .card span .name {
   position: absolute;
   top: 20px;
   left: 20px;
   font-size: 22px;
-  -webkit-transform: translateX(20px);
-          transform: translateX(20px);
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  transform: translateX(20px);
+  transition: all 0.5s ease;
 }
-
 .card span .point {
   position: absolute;
   right: 20px;
   font-size: 60px;
   font-weight: 100;
 }
-
 .card .edit {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   position: absolute;
   right: 0;
   height: 100%;
   width: 0px;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   opacity: 0;
   visibility: hidden;
 }
-
 .card .edit svg {
   width: 15px;
   height: 15px;
   margin: 5px;
 }
-
 .card.active {
   cursor: pointer;
 }
-
 .card.active span {
-  -webkit-transform: scaleX(0.9) translateX(-30px);
-          transform: scaleX(0.9) translateX(-30px);
+  transform: scaleX(0.9) translateX(-30px);
   cursor: pointer;
 }
-
 .card.active span .name {
-  -webkit-transform: translateX(50px);
-          transform: translateX(50px);
+  transform: translateX(50px);
 }
-
 .card.active .edit {
   position: absolute;
   right: 0;
@@ -1614,22 +1218,16 @@ button:hover span {
   opacity: 1;
   visibility: visible;
 }
-
 .card:hover {
   cursor: pointer;
 }
-
 .card:hover span {
-  -webkit-transform: scaleX(0.96) translateX(-11px);
-          transform: scaleX(0.96) translateX(-11px);
+  transform: scaleX(0.96) translateX(-11px);
   cursor: pointer;
 }
-
 .card:hover span .name {
-  -webkit-transform: translateX(30px);
-          transform: translateX(30px);
+  transform: translateX(30px);
 }
-
 .card:hover .edit {
   position: absolute;
   right: 0;
@@ -1638,10 +1236,8 @@ button:hover span {
   opacity: 1;
   visibility: visible;
 }
-
 @keyframes GradientColor {
-  0%,
-  100% {
+  0%, 100% {
     background-position: 0% 50%;
   }
   50% {
@@ -1662,7 +1258,6 @@ h1 {
   width: 100%;
   margin-top: 0 !important;
 }
-
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -1683,7 +1278,6 @@ li {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -1697,22 +1291,12 @@ li {
 }
 
 #bottom {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -ms-flex-line-pack: baseline;
-      align-content: baseline;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: baseline;
+  align-items: center;
   position: absolute;
   bottom: 0;
   left: 0;
